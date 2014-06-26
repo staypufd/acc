@@ -14,7 +14,7 @@ import domain.treats.Cookie;
  * @author samjr
  *
  */
-public class CookieStoreLessonMain {
+public class CookieStoreInheritanceLessonMain {
 
 	/**
 	 * @param args
@@ -40,6 +40,21 @@ public class CookieStoreLessonMain {
 		Cookie theGottenCookie = customer1.getMyCookies().get(0);
 
 		theGottenCookie.eatMe3();
+		
+		/**
+		 *  You can add code that is very much like the above to have the customer pick cakes and candies
+		 *  	as well. The methods of whatCakesAreAvailable and whatCandiesAreAvailable are in the Store 
+		 *  class as well as pickSomeCandies and pickSomeCakes.
+		 *  
+		 *  You will will have to add eatMe methods to the Cakes and Candies classes following the 
+		 *  pattern you see in Cookie.
+		 */
+		
+		// *****  Put your additional code here to work with the Cakes and Candies *****
+		// *****************************************************************************
+		
+		
+
 	}
 
 }

@@ -46,7 +46,7 @@ public class Cookie extends ConfectionaryItem {
 	@Override
 	public void eatMe3() {
 		super.eatMe3();
-		System.out.println("Cookie eatMe3");
+		System.out.println("Cookie eatMe3 is being ate as this text is put out.");
 	}
 	
 }

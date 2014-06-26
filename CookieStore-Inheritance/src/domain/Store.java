@@ -19,8 +19,8 @@ import domain.treats.Cookie;
 public class Store {
 	
 	private ArrayList<Cookie> cookiesArrayList = new ArrayList<>();
-	private ArrayList<Candy> candyArrayList = new ArrayList<>();
-	private ArrayList<Cake> cakeArrayList = new ArrayList<>();
+	private ArrayList<Candy> candiesArrayList = new ArrayList<>();
+	private ArrayList<Cake> cakesArrayList = new ArrayList<>();
 
 
 	/**
@@ -65,11 +65,49 @@ public class Store {
 		this.cookiesArrayList = cookiesArrayList;
 	}
 
+	/**
+	 * @return the candiesArrayList
+	 */
+	public ArrayList<Candy> getCandiesArrayList() {
+		return candiesArrayList;
+	}
+
+	/**
+	 * @param candiesArrayList the candiesArrayList to set
+	 */
+	public void setCandiesArrayList(ArrayList<Candy> candiesArrayList) {
+		this.candiesArrayList = candiesArrayList;
+	}
+
+	/**
+	 * @return the cakesArrayList
+	 */
+	public ArrayList<Cake> getCakesArrayList() {
+		return cakesArrayList;
+	}
+
+	/**
+	 * @param cakesArrayList the cakesArrayList to set
+	 */
+	public void setCakesArrayList(ArrayList<Cake> cakesArrayList) {
+		this.cakesArrayList = cakesArrayList;
+	}
+
+
+
 	// Behaviors
 	public ArrayList<Cookie> whatCookiesAreAvailable() {
 		return getCookiesArrayList();
 	}
-
+	
+	public ArrayList<Candy> whatCandiesAreAvailable() {
+		return getCandiesArrayList();
+	}
+	
+	public ArrayList<Cake> whatCakesAreAvailable() {
+		return getCakesArrayList();
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -118,7 +156,7 @@ public class Store {
 		ArrayList<Candy> foundCandies = new ArrayList<>();
 		
 		
-		for (Candy candy : candyArrayList) {
+		for (Candy candy : candiesArrayList) {
 			if (candy.getKind().equalsIgnoreCase(candyType)) {
 				if (foundCandies.size() <= theNumberOfCandiesTheCustomerWants) {
 					// Add the found cookie
@@ -129,7 +167,7 @@ public class Store {
 		
 		// Remove the found candies from the stores candies
 		for (Candy candy : foundCandies) {
-			candyArrayList.remove(candy);
+			candiesArrayList.remove(candy);
 		}
 		
 		// Did we give them enough candies?  If not then tell them how many we gave them
@@ -146,7 +184,7 @@ public class Store {
 		ArrayList<Cake> foundCakes = new ArrayList<>();
 		
 		
-		for (Cake cake : cakeArrayList) {
+		for (Cake cake : cakesArrayList) {
 			if (cake.getKind().equalsIgnoreCase(cakeType)) {
 				if (foundCakes.size() <= theNumberOfCakesTheCustomerWants) {
 					// Add the found cookie
@@ -157,7 +195,7 @@ public class Store {
 		
 		// Remove the found candies from the stores candies
 		for (Cake cake : foundCakes) {
-			cakeArrayList.remove(cake);
+			cakesArrayList.remove(cake);
 		}
 		
 		// Did we give them enough candies?  If not then tell them how many we gave them
@@ -168,20 +206,6 @@ public class Store {
 		
 		return foundCakes;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }
