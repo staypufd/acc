@@ -21,6 +21,14 @@ public class Triangle extends Shape {
 		this.base = base;
 		this.height = height;
 	}
+	
+	// Copy Constructor
+	public Triangle(Triangle triangleToCopy) {
+		super(triangleToCopy);
+		this.base = triangleToCopy.base;
+		this.height = triangleToCopy.height;
+	}
+	
 	/**
 	 * @return the base
 	 */

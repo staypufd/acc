@@ -20,6 +20,13 @@ public class Rectangle extends Shape {
 		this.length = length;
 		this.width = width;
 	}
+	
+	// Copy Constructor
+	public Rectangle(Rectangle rectToCopy) {
+		super(rectToCopy);
+		this.length = rectToCopy.length;
+		this.width = rectToCopy.width;
+	}
 
 	/* (non-Javadoc)
 	 * @see domain.Shape#calcArea()

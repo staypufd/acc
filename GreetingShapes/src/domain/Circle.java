@@ -20,6 +20,7 @@ public class Circle extends Shape {
 		this.radius = radius;
 	}
 	
+	// Copy Constructor
 	public Circle(Circle originalShape) {
 		super(originalShape);
 		this.radius = originalShape.radius;
