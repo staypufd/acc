@@ -1,6 +1,6 @@
 package javacup;
 
-public class RoundOfFour {
+public class RoundOfFour extends Round {
 	Team team1;
 	Team team2;
 	Team team3;

@@ -2,7 +2,7 @@ package javacup;
 
 import java.util.Random;
 
-public class Match {
+public class Match implements Speakable {
 	private Team team1;
 	private Team team2;
 	
@@ -65,6 +65,13 @@ public class Match {
 	@Override
 	public String toString() {
 		return "Match [team1=" + team1 + ", team2=" + team2 + "]";
+	}
+
+
+	@Override
+	public String speak() {
+		// TODO Auto-generated method stub
+		return "Match is speaking.";
 	}
 
 }

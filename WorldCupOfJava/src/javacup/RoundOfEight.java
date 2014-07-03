@@ -1,6 +1,6 @@
 package javacup;
 
-public class RoundOfEight {
+public class RoundOfEight extends Round {
 	RoundOfFour bracketA;
 	RoundOfFour bracketB;
 	
@@ -8,6 +8,17 @@ public class RoundOfEight {
 		super();
 		this.bracketA = bracketA;
 		this.bracketB = bracketB;
+	}
+	
+	public RoundOfEight(Team t1, Team t2, Team t3, Team t4, 
+			Team t5, Team t6, Team t7, Team t8) {
+		
+		RoundOfFour roundOfFour1 = new RoundOfFour(t1, t2, t3, t4);
+		RoundOfFour roundOfFour2 = new RoundOfFour(t5, t6, t7, t8);
+		
+		this.bracketA = roundOfFour1;
+		this.bracketB = roundOfFour2;
+
 	}
 
 	@Override
