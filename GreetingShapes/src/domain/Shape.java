@@ -61,7 +61,7 @@ public abstract class Shape implements Greeter {
 	
 	// Methods that implement the Greeter interface
 	public String speak() {
-		return "Howdy! " + this.getClass().getName();
+		return "Howdy! " + this.getClass().getSimpleName();
 	}
 	
 	public String sayGoodbye() {
