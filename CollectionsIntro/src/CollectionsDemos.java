@@ -21,13 +21,32 @@ import java.util.TreeSet;
  */
 public class CollectionsDemos {
 
-	
-	public static void arrayListExample() {
+	// You can add any object type to the List below
+	public static void listExample() {
 		List<Object> al = new LinkedList<>();
 		al.add(new Object());
 		al.add("abc");
+		// Add the string "bob" at position 2
 		al.add(2, "bob");
-
+		al.add(3, "Sally");
+		al.add(al.size(), "Jill");
+		// If you try to add to a position larger than the size of the array you will get an error (java.lang.IndexOutOfBoundsException)
+		// al.add(10, "Frank");
+		
+		
+		
+		System.out.println(al);
+	}
+	
+	public static void listExampleTwo() {
+		List<Integer> al = new ArrayList<>();
+		al.add(-8);
+		al.add(7);
+		al.add(2);
+		al.add(8);
+		al.add(18);
+		al.add(8);
+		al.add(3);
 
 		System.out.println(al);
 	}
@@ -120,7 +139,8 @@ public class CollectionsDemos {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		arrayListExample();
+		listExample();
+		listExampleTwo();
 		hashMapExample();
 		setExample();
 		hashSetExample();
