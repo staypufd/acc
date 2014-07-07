@@ -89,6 +89,12 @@ public class GreeterShapesMain {
 		boolean areSameColors = originialShape.getColor() == aCopiedShape.getColor();
 		System.out.println("Is the copied shape's color the same as the original? " + areSameColors);
 
+		System.out.println(aCopiedShape.speak());
+		System.out.println(aCopiedShape.speak("Sam put this in"));
+		System.out.println(aCopiedShape.speak(new Circle("red", 8.2)));
+		System.out.println(aCopiedShape.speak(7));
+		System.out.println(new ArrayList<>());
+		
 	}
 
 }

@@ -70,6 +70,11 @@ public class Circle extends Shape {
 	public String speak() {
 		return "I am a circle hear me roll!";
 	}
+	
+	@Override
+	public String speak(String s) {
+		return "Circles speak for a String";
+	}
 
 	
 }

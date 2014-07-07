@@ -8,6 +8,7 @@ package interfaces;
  *
  */
 public interface Greeter {
+	
 	public String speak();
 	public String sayGoodbye();
 }
