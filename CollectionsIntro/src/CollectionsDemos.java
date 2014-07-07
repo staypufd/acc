@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -73,6 +74,7 @@ public class CollectionsDemos {
 		numbersSet.add(11);
 		numbersSet.add(1);
 		
+		// TreeSet keeps objects added to it sorted
 		System.out.print("Numbers in set are: " );
 		for (Integer integer : numbersSet) {
 			System.out.print(integer + " ");
@@ -96,6 +98,23 @@ public class CollectionsDemos {
 		System.out.println("NumbersSet now has in it: " + numbersSet.toString());
 	}
 	
+	public static void hashSetExample() {
+		
+		// HashSet doesn't sort the objects added to it
+		Set<Person> peopleSet = new HashSet<>();
+		peopleSet.add(new Person("Sam", 46, 'M', "Austin", "TX"));
+		peopleSet.add(new Person("Bob", 23, 'M', "Dallas", "TX"));
+		peopleSet.add(new Person("Jill", 23, 'F', "Denver", "CO"));
+		peopleSet.add(new Person("Sally", 7, 'f', "Austin", "TX"));
+		peopleSet.add(new Person("Vinkat", 57, 'm', "Chicago", "IL"));
+		
+		System.out.println();
+		System.out.println("People are: " + peopleSet);
+		for (Person person : peopleSet) {
+			System.out.println("Peoples names are: " + person.getName());
+		}
+	}
+	
 	/**
 	 * @param args
 	 */
@@ -104,6 +123,7 @@ public class CollectionsDemos {
 		arrayListExample();
 		hashMapExample();
 		setExample();
+		hashSetExample();
 	}
 	
 
