@@ -33,8 +33,6 @@ public class CollectionsDemos {
 		// If you try to add to a position larger than the size of the array you will get an error (java.lang.IndexOutOfBoundsException)
 		// al.add(10, "Frank");
 		
-		
-		
 		System.out.println(al);
 	}
 	
@@ -79,6 +77,44 @@ public class CollectionsDemos {
 		System.out.println(o);
 		
 		// print out a blank line
+		System.out.println();
+		
+	}
+	
+	public static void hashMapExampleTwo() {
+		
+		// Create a new HashMap that will hold a String as a key and a Object as a value
+		Map<String, Integer> hm = new HashMap<>();
+		hm.put("Sam", 8);
+		hm.put("Bob", 7); 
+		hm.put("Jill", 3); 
+		hm.put("Fran", 5); 
+		hm.put("Spanky", 10); 
+		hm.put("Mary", 19); 
+		hm.put("Edwardo", 4); 
+		hm.put("Q", 21); 
+		hm.put("Steven", -9); 
+		
+		// Get keys set and print it
+		System.out.println(hm.keySet());
+		
+		// Print out keys
+		for (Iterator iterator = hm.keySet().iterator(); iterator.hasNext();) {
+			String key = (String) iterator.next();
+			System.out.println(key);
+		}
+		// Another way to print out keys
+		for (String key : hm.keySet()) {
+			System.out.println(key);
+		}
+		
+		// Sum the values
+		int total = 0;
+		for (int theInteger : hm.values()) {
+			total += theInteger;
+		}
+		System.out.println("The total of the values in the hashmap is: " + total);
+		
 		System.out.println();
 		
 	}
@@ -142,6 +178,7 @@ public class CollectionsDemos {
 		listExample();
 		listExampleTwo();
 		hashMapExample();
+		hashMapExampleTwo();
 		setExample();
 		hashSetExample();
 	}
