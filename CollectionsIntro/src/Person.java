@@ -6,7 +6,7 @@
  * @author samjr
  *
  */
-public class Person {
+public class Person implements Comparable<Person> {
 	private String name;
 	private int age;
 	private char sex;
@@ -97,6 +97,27 @@ public class Person {
 	 */
 	public void setState(String state) {
 		this.state = state;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + ", sex=" + sex
+				+ ", city=" + city + ", state=" + state + "]";
+	}
+	
+	@Override
+	public int compareTo(Person o) {
+		
+		// See more about compareTo at this tutorial including multiple value comparison:  
+		// http://www.javapractices.com/topic/TopicAction.do?Id=10
+		
+		return this.getName().compareTo(o.getName());
+
+		// Compare based on age
+		// return new Integer(this.getAge()).compareTo(new Integer(o.getAge()));
+		
 	}
 	
 	

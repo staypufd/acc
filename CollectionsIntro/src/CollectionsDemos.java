@@ -9,10 +9,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-
-
 /**
- * 
+ * Collections Documentation on Oracle site is at: 
+ * http://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html
  */
 
 /**
@@ -33,6 +32,11 @@ public class CollectionsDemos {
 		// If you try to add to a position larger than the size of the array you will get an error (java.lang.IndexOutOfBoundsException)
 		// al.add(10, "Frank");
 		
+		// Insert "Sally" with "Mary"
+		al.add(3, "Mary");
+		
+		al.set(3, "Mary Replaced");
+		
 		System.out.println(al);
 	}
 	
@@ -45,8 +49,13 @@ public class CollectionsDemos {
 		al.add(18);
 		al.add(8);
 		al.add(3);
+		
+		
+		int x = al.get(2);
+		System.out.println("X is: " + x);
 
 		System.out.println(al);
+		System.out.println();
 	}
 	
 	/**
@@ -64,6 +73,9 @@ public class CollectionsDemos {
 		// Older Java Development Kits before JDK 5 required you to create a instance of 
 		// the Integer class initialized with the int 7. Integer class is a Object subclass not a base type
 		// hm.put("Bob", new Integer(7));
+		
+		hm.put("Sally", new Person("Sally", 40, 'f', "New York", "NY"));
+		
 
 		// Print the whole hashmap
 		System.out.println(hm);
@@ -76,12 +88,52 @@ public class CollectionsDemos {
 		// Print the Integer we got
 		System.out.println(o);
 		
+		Object anO = hm.get("Bob");
+		System.out.println(anO);
+		
+		String s = (String) hm.get("Sam");
+		System.out.println(s);
+		
+		Object anO2	= hm.get("Sam");
+		System.out.println(anO2);
+		
+		// Sally as a generic Object
+		Object p = hm.get("Sally");
+		System.out.println(p);
+		
+		// Sally has a person object so use a 'cast' to tell the 
+		// compilier that we know we're pulling a Person out and not just a 
+		// generic Object
+		Person aPerson = (Person)hm.get("Sally");
+		System.out.println("Sally lives in: " + aPerson.getCity());
+		System.out.println(aPerson);
+		
 		// print out a blank line
 		System.out.println();
 		
 	}
 	
 	public static void hashMapExampleTwo() {
+		Map<String, Person> personMap = new HashMap<>();
+		
+		personMap.put("Sally", new Person("Sally", 45, 'f', "Houston", "TX"));
+		personMap.put("Sam", new Person("Sam", 33, 'm', "Paris", "TX"));
+		personMap.put("Greg", new Person("Greg", 21, 'M', "Austin", "TX"));
+		
+		System.out.println("Hashmap Example 2 Output");
+		
+		Person p = personMap.get("Greg");
+		System.out.println("Our person is: " + p.getName() + " from city: " + p.getCity());
+		
+		System.out.println("---------");
+		for (Person p2 : personMap.values()) {
+			System.out.println(p2);
+		}
+		System.out.println("---------");
+		
+	}
+	
+	public static void hashMapExampleThree() {
 		
 		// Create a new HashMap that will hold a String as a key and a Object as a value
 		Map<String, Integer> hm = new HashMap<>();
@@ -103,17 +155,30 @@ public class CollectionsDemos {
 			String key = (String) iterator.next();
 			System.out.println(key);
 		}
+		
 		// Another way to print out keys
 		for (String key : hm.keySet()) {
 			System.out.println(key);
 		}
 		
+		// USE THIS WAY IN YOUR CODE
 		// Sum the values
 		int total = 0;
-		for (int theInteger : hm.values()) {
-			total += theInteger;
+		for (int x : hm.values()) {
+			// total = total + x;
+			total += x;  // Shortcut syntax for above
 		}
 		System.out.println("The total of the values in the hashmap is: " + total);
+		
+		// This is how older code may do it.
+		// Sum the values using the Integer object (autoboxing makes it so we don't 
+		// have to write our code like this.  Use the above example...
+		int total2 = 0;
+		for (Integer x : hm.values()) {
+			// total2 = total2 + x;
+			total2 += x.intValue();  // Shortcut syntax for above
+		}
+		System.out.println("The total of the values in the hashmap is: " + total2);
 		
 		System.out.println();
 		
@@ -128,11 +193,13 @@ public class CollectionsDemos {
 		numbersSet.add(7);
 		numbersSet.add(11);
 		numbersSet.add(1);
+		numbersSet.add(8);
+		numbersSet.add(4);
 		
 		// TreeSet keeps objects added to it sorted
 		System.out.print("Numbers in set are: " );
-		for (Integer integer : numbersSet) {
-			System.out.print(integer + " ");
+		for (Integer i : numbersSet) {
+			System.out.print(i + " ");
 		}
 		
 		// Print out two blank lines.  Note I'm using print not println.
@@ -142,7 +209,15 @@ public class CollectionsDemos {
 
 		System.out.println("Does set contain number 9? " + numbersSet.contains(9) + "\n");
 		
+		// Arrays is what is known as a Utility class
+		// Arrays.asList will take a base type array and create a Collection from it.
 		ArrayList<Integer> matchList = new ArrayList<Integer>(Arrays.asList(7, 8, 11));
+		// Equivalent to this:
+		// ArrayList<Integer> matchList = new ArrayList<Integer>();
+		// matchList.add(7);
+		// matchList.add(8);
+		// matchList.add(11);
+		
 		System.out.println("Does set contain all of these numbers 7, 8 and 11? " + 
 				numbersSet.containsAll(matchList) + "\n");
 		
@@ -152,6 +227,45 @@ public class CollectionsDemos {
 		
 		System.out.println("NumbersSet now has in it: " + numbersSet.toString());
 	}
+	
+	public static void setExample2() {
+		Set<String> stringsSet = new TreeSet<>();
+		stringsSet.add("abc");
+		stringsSet.add("acd");
+		stringsSet.add("aaa");
+		stringsSet.add("abc");
+		stringsSet.add("Abc");
+		
+		System.out.println("Set Example 2 - Strings in a TreeSet");
+		System.out.println("Strings should sort to natural order");
+		System.out.println("----");
+		for (String string : stringsSet) {
+			System.out.println(string);
+		}
+
+		System.out.println("----");
+		
+	}
+	
+	public static void setExample3() {
+		java.lang.Comparable comp;
+		Set<Person> personSet = new TreeSet<>();
+		personSet.add(new Person("Sally", 45, 'f', "Houston", "TX"));
+		personSet.add(new Person("Sam", 33, 'm', "Paris", "TX"));
+		personSet.add(new Person("Greg", 21, 'M', "Austin", "TX"));
+		
+		
+		System.out.println("Set Example 3 - Persons in a TreeSet");
+		System.out.println("Persons should sort to natural order");
+		System.out.println("----");
+		for (Person person : personSet) {
+			System.out.println(person);
+		}
+
+		System.out.println("----");
+		
+	}
+	
 	
 	public static void hashSetExample() {
 		
@@ -168,6 +282,12 @@ public class CollectionsDemos {
 		for (Person person : peopleSet) {
 			System.out.println("Peoples names are: " + person.getName());
 		}
+		System.out.println("---");
+		
+		peopleSet.add(new Person("Omar", 76, 'm', "Reston", "VA"));
+		for (Person person : peopleSet) {
+			System.out.println("Peoples names are: " + person.getName());
+		}
 	}
 	
 	/**
@@ -179,7 +299,10 @@ public class CollectionsDemos {
 		listExampleTwo();
 		hashMapExample();
 		hashMapExampleTwo();
+		hashMapExampleThree();
 		setExample();
+		setExample2();
+		setExample3();
 		hashSetExample();
 	}
 	
