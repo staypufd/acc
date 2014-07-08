@@ -29,13 +29,23 @@ public class CollectionFilterLabMain {
 		List<Person> peopleLessThanFourty = new ArrayList<>();
 		for (Person person : people) {
 			if (person.getAge() < 40) {
+				
+				// Make a copy of the person so that it can't change behind us
 				peopleLessThanFourty.add(new Person(person.getName(), person.getAge(), person.getSex(), person.getCity(), person.getState()));
+				// peopleLessThanFourty.add(person);
 			}
 		}
+		
+		// Modify the original object in position 1 of the people array
+		people.get(1).setAge(44);
 		
 		// Print the list of peopleLessThanFourty
 		System.out.println("**** People Less Than Fourty ****");
 		for (Person person : peopleLessThanFourty) {
+			System.out.println(person);
+		}
+		System.out.println("----");
+		for (Person person : people) {
 			System.out.println(person);
 		}
 	}

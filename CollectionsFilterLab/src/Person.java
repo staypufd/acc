@@ -27,6 +27,17 @@ public class Person implements Comparable<Person> {
 		this.city = city;
 		this.state = state;
 	}
+	
+	// Copy Constructor
+	public Person(Person aPerson) {
+		super();
+		this.name = new String(aPerson.getName());
+		this.age = aPerson.age;
+		this.sex = aPerson.sex;
+		this.city = new String(aPerson.getCity());
+		this.state = new String(aPerson.getState());
+	}
+	
 	/**
 	 * @return the name
 	 */
