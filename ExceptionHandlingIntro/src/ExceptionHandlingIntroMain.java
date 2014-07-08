@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 /**
  * Shows handling of Runtime type exceptions
+ * 
+ * Read more about Exceptions here:
+ * http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
  */
 
 /**
