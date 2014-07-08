@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * 
+ * Shows handling of Runtime type exceptions
  */
 
 /**
