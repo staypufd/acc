@@ -37,6 +37,8 @@ public class CollectionFilterLabMain {
 		}
 		
 		// Modify the original object in position 1 of the people array
+		// Will it make the peopleLessThanFourty list wrong now?  Not if 
+		// we have copied the people before adding them to the peopleLessThanFourty list.
 		people.get(1).setAge(44);
 		
 		// Print the list of peopleLessThanFourty
