@@ -9,10 +9,11 @@ import java.util.ArrayList;
  *
  */
 public class Stack {
+	private int maxStackSize = 3; // Really 4 since Collections are base zero
 	private ArrayList<Object> s = new ArrayList<>();
 	
 	public void push(Object o) throws StackToBigException {
-		if (s.size() < 3) {
+		if (s.size() < maxStackSize) {
 			s.add(0, o);
 		} else {
 			throw new StackToBigException();
