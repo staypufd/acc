@@ -156,7 +156,7 @@ public class ScannerMain {
 		System.out.println("Please type in a integer, hit return, then put in a float.");
 		System.out.println("You will see an error occure due to the float, b/c the code try's");
 		System.out.println("to read a integer when the next token doesn't match the pattern of");
-		System.out.println("a integer.");
+		System.out.println("a integer. Type -1 to exit.");
 		
         while (s.hasNext()) {
         		try {
