@@ -203,6 +203,7 @@ public class ScannerMain {
 		// http://www.mkyong.com/regular-expressions/how-to-validate-email-address-with-regular-expression/
 		
 		
+		// Email RegEx pattern.  Note the string was too long for one line.
 		String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + 
 						"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 		
