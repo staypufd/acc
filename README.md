@@ -39,12 +39,12 @@ Java 3 Class Projects
 	* Mother of all Demos
 		+ https://www.youtube.com/watch?v=yJDv-zdhzMY&feature=kp
 		+ Showed so many things before there time
-			++ mice
-			++ hypertext
-			++ video conferencing
-			++ outlining
-			++ video overlays & blending
-			++ semantic data
+			+ mice
+			+ hypertext
+			+ video conferencing
+			+ outlining
+			+ video overlays & blending
+			+ semantic data
 		+ Inspired Xerox Parc and others
 	* Mosaic
 		+ Marc Andreson
