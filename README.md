@@ -24,6 +24,13 @@
 	- Collections
 		- Collection Interfaces List, Map and Set
 	- Enum
+	- Exceptions
+		- Exception
+		- Runtime Exception
+		- throw
+		- try, catch and finally
+		- Method signature for throwing a exception
+		- Debugging an Exception
 	- Scanner class usage
 		- hasNext
 		- Read, Eval, Print, Loops
