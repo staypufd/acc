@@ -21,7 +21,15 @@
 
 #Java 2 Class 
 - syllabus
-	- ???
+	- Collections
+		- Collection Interfaces List, Map and Set
+	- Enum
+	- Scanner class usage
+		- hasNext
+		- Read, Eval, Print, Loops
+	- Regular Expressions (RegEx)
+	- StringFormat class
+	- printf method on System.out
 - Projects
 	- WorldCupOfJava
 	- GreetingShapes
@@ -34,6 +42,18 @@
 	- Scanner
 	- StringManipulationAndFormating
 - Readings
+	- CRC - Class Responsibility Collaborators
+	    - A Laboratory For Teaching Object Oriented Thinking
+	    		- http://c2.com/doc/oopsla89/paper.html
+		- Object Design: Roles, Responsibilities, and Collaborations
+			- http://www.amazon.com/Object-Design-Roles-Responsibilities-Collaborations/dp/0201379430/ref=la_B001IQXNWC_1_1?s=books&ie=UTF8&qid=1405365849&sr=1-1
+			- My favorite
+		- Using CRC Cards: An Informal Approach to Object-Oriented Development
+			- http://www.amazon.com/Using-CRC-Cards-Object-Oriented-Development/dp/0133746798/ref=sr_1_1?s=books&ie=UTF8&qid=1405365731&sr=1-1&keywords=CRC+cards
+		- The CRC Card Book
+			-http://www.amazon.com/CRC-Card-Book-David-Bellin/dp/0201895358/ref=sr_1_2?s=books&ie=UTF8&qid=1405365731&sr=1-2&keywords=CRC+cards
+		- Responsiblity Base Modeling
+			- http://alistair.cockburn.us/Responsibility-based+modeling
 	- Basic Computer Games 
 		- http://www.atariarchives.org/basicgames/
 
