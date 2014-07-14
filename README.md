@@ -35,7 +35,7 @@
 
 
 #Java 3 Class Info & Projects
-- HTML History
+##HTML History
 	* ARPANET
 		+ DOC Funded
 	* TCP/IP
@@ -62,7 +62,7 @@
 		+ Marc Andreson
 			++ Co-founder of Netscape with Jim Clark (of Standford and Xerox Parc - creator of VHDL)
 		+ Microsoft created IE from Mosaic base
-- Basic HTML Page (http://www.w3schools.com/html/default.asp)
+##Basic HTML Page (http://www.w3schools.com/html/default.asp)
 	* Tags
 		+ DOCTYPE declaration for HTML5 
 		+ head
@@ -74,7 +74,7 @@
 		+ images
 		+ Colors and Color Names
 		+ HTML Entities (special characters) < must be encoded as &lt and > must be encoded as &gt etc.
-- More HTML
+##More HTML
 	* More Tags
 		+ style
 		+ link "<a>" tag
@@ -84,9 +84,6 @@
 		+ span
 		+ form
 		+ input (only works in form tag)
-
-
-
 
 #ACC Additional Materials
 
