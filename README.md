@@ -7,6 +7,8 @@
 	- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
 
 #Java 1 Class
+- Syllabus
+	- ???
 - Projects
 	- Composition
 	- ArrayList
@@ -18,6 +20,8 @@
 
 
 #Java 2 Class 
+- syllabus
+	- ???
 - Projects
 	- WorldCupOfJava
 	- GreetingShapes
