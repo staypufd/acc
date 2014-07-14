@@ -1,37 +1,37 @@
 #ACC Summer 2014 Java Course
 
 #Books
-	- The Java Tutorial: A Short Course on the Basics (5th Edition)
-		- http://www.amazon.com/The-Java-Tutorial-Course-Edition/dp/0132761696
-	- Murach's Java Servlets and JSP, 3rd Edition 
-		- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
+- The Java Tutorial: A Short Course on the Basics (5th Edition)
+	- http://www.amazon.com/The-Java-Tutorial-Course-Edition/dp/0132761696
+- Murach's Java Servlets and JSP, 3rd Edition 
+	- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
 
 #Java 1 Class
-	- Projects
-		- Composition
-		- ArrayList
-		- ArrayList-Expanded
-		- CookieStore
-		- CookieStore-Inheritance
-	- Readings
-		- ???
+- Projects
+	- Composition
+	- ArrayList
+	- ArrayList-Expanded
+	- CookieStore
+	- CookieStore-Inheritance
+- Readings
+	- ???
 
 
 #Java 2 Class 
-	- Projects
-		- WorldCupOfJava
-		- GreetingShapes
-		- TestSystemOutPrintln
-		- CollectionsIntro
-		- CollectionsFilterLab
-		- Enums
-		- ExceptionHandlingIntro
-		- ExceptionHandling-Expanded
-		- Scanner
-		- StringManipulationAndFormating
-	- Readings
-		- Basic Computer Games 
-			- http://www.atariarchives.org/basicgames/
+- Projects
+	- WorldCupOfJava
+	- GreetingShapes
+	- TestSystemOutPrintln
+	- CollectionsIntro
+	- CollectionsFilterLab
+	- Enums
+	- ExceptionHandlingIntro
+	- ExceptionHandling-Expanded
+	- Scanner
+	- StringManipulationAndFormating
+- Readings
+	- Basic Computer Games 
+		- http://www.atariarchives.org/basicgames/
 
 
 #Java 3 Class Info & Projects
