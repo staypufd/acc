@@ -1,6 +1,3 @@
-acc
-===
-
 #ACC Summer 2014 Java Course
 
 #Books
