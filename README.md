@@ -1,28 +1,43 @@
 acc
 ===
 
-ACC Summer 2014 Java Projects
+#ACC Summer 2014 Java Course
 
-Java 1 Class Projects
-- Composition
-- ArrayList
-- ArrayList-Expanded
-- CookieStore
-- CookieStore-Inheritance
+#Books
+	- The Java Tutorial: A Short Course on the Basics (5th Edition)
+		- http://www.amazon.com/The-Java-Tutorial-Course-Edition/dp/0132761696
+	- Murach's Java Servlets and JSP, 3rd Edition 
+		- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
 
-Java 2 Class Projects
-- WorldCupOfJava
-- GreetingShapes
-- TestSystemOutPrintln
-- CollectionsIntro
-- CollectionsFilterLab
-- Enums
-- ExceptionHandlingIntro
-- ExceptionHandling-Expanded
-- Scanner
-- StringManipulationAndFormating
+#Java 1 Class
+	-Projects
+		- Composition
+		- ArrayList
+		- ArrayList-Expanded
+		- CookieStore
+		- CookieStore-Inheritance
+	- Readings
+		- ???
 
-Java 3 Class Projects
+
+#Java 2 Class 
+	- Projects
+		- WorldCupOfJava
+		- GreetingShapes
+		- TestSystemOutPrintln
+		- CollectionsIntro
+		- CollectionsFilterLab
+		- Enums
+		- ExceptionHandlingIntro
+		- ExceptionHandling-Expanded
+		- Scanner
+		- StringManipulationAndFormating
+	- Readings
+		- Basic Computer Games 
+			- http://www.atariarchives.org/basicgames/
+
+
+#Java 3 Class Info & Projects
 - HTML History
 	* ARPANET
 		+ DOC Funded
@@ -76,31 +91,31 @@ Java 3 Class Projects
 
 
 
-ACC Additional Materials
+#ACC Additional Materials
 
-Copy Constructor
+##Copy Constructor
 - http://java-journal.blogspot.com/2013/02/how-to-write-copy-constructor-using.html
 - http://www.artima.com/intv/bloch13.html  (Very good advice from one of the Masters of Java
 
-Numbers & Strings
+##Numbers & Strings
 - http://docs.oracle.com/javase/tutorial/java/data/index.html
 
-StringBuilder
+##StringBuilder
 - http://docs.oracle.com/javase/tutorial/java/data/buffers.html
 
-Collections
+##Collections
 - http://docs.oracle.com/javase/tutorial/collections/
 - http://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html
 
-Enums
+##Enums
 - http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
 
-Scanner and Formatters
+##Scanner and Formatters
 - http://docs.oracle.com/javase/tutorial/essential/io/scanning.html
 - http://docs.oracle.com/javase/tutorial/essential/io/formatting.html
 
-Exceptions
+##Exceptions
 - http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
 
-RegEx 
+##RegEx 
 - http://refcardz.dzone.com/refcardz/regular-expressions#refcard-download-social-buttons-display
