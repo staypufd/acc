@@ -23,7 +23,28 @@ Java 2 Class Projects
 - StringManipulationAndFormating
 
 Java 3 Class Projects
-- ???
+- Basic HTML Page (http://www.w3schools.com/html/default.asp)
+	* Tags
+		+ DOCTYPE declaration for HTML5 
+		+ head
+		+ title
+		+ body
+		+ header (h1 - h5)
+		+ paragraphs
+		+ lists (ul, ol)
+		+ images
+		+ Colors and Color Names
+		+ HTML Entities (special characters) < must be encoded as &lt and > must be encoded as &gt etc.
+- More HTML
+	* More Tags
+		+ style
+		+ link "<a>" tag
+		+ comments
+		+ formatting tags
+		+ div
+		+ span
+		+ form
+		+ input (only works in form tag)
 
 
 
