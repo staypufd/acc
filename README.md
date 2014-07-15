@@ -8,7 +8,19 @@
 
 #Java 1 Class
 - Syllabus
-	- ???
+	- What are Objects?
+	- Classes
+	- Instance variables
+	- Class variables
+	- Methods
+	- Constructors
+	- Overloading and Overriding Methods
+	- Encapsulation
+	- Arrays (built-in and ArrayList)
+	- toString method
+	- Packages
+	- Inheritance
+	- Access Modifies (package, public, protected and private)
 - Projects
 	- Composition
 	- ArrayList
