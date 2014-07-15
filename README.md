@@ -24,6 +24,11 @@
 	- Collections
 		- Collection Interfaces List, Map and Set
 	- Enum
+		- Simple Enums
+			- Ordinal values
+		- Enum classes
+			- Customer Enum constructors
+			- Custom Enum behaviores
 	- Exceptions
 		- Exception
 		- Runtime Exception
