@@ -30,6 +30,8 @@
 ## Readings
 	- ???
 
+##Instructor Notes
+	- ???
 
 #Java 2 Class 
 ## syllabus
@@ -81,6 +83,8 @@
 	- Basic Computer Games 
 		- http://www.atariarchives.org/basicgames/
 
+##Instructor Notes
+	- ???
 
 #Java 3 Class Info & Projects
 ##Syllabus
@@ -89,7 +93,9 @@
 	- More HTML Tags
 	- CSS
 	- HTTP - An Intro
-	
+	- Servlets
+	- JSP's
+	- JSTL
 
 ##Instructor Notes
 ###HTML History
