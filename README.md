@@ -6,27 +6,52 @@
 - Murach's Java Servlets and JSP, 3rd Edition 
 	- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
 
-#Java 1 Class
+#Java 1 Class (24 hrs)
+
 ## Syllabus
+
+###Week 1 (4 day week)
+
+####Module 1 (3 hrs)
 	- What are Objects?
 	- Classes
+
+####Module 2 (3 hrs)
 	- Instance variables
 	- Class variables
+
+####Module 3 (3 hrs)
 	- Methods
+
+####Module 4 (3 hrs)
 	- Constructors
-	- Overloading and Overriding Methods
-	- Encapsulation
-	- Arrays (built-in and ArrayList)
 	- toString method
-	- Packages
+
+###Week 2 (4 day week)
+
+####Module 5 (3 hrs)
+	- Encapsulation
+	- Access Modifies (package, public,and private)
+	
+####Module 6 (3 hrs)
 	- Inheritance
-	- Access Modifies (package, public, protected and private)
+	- Access Modifies (protected)
+	
+####Module 7 (3 hrs)
+	- Overloading and Overriding Methods
+	- Arrays (built-in and ArrayList)
+	
+####Module 8 (3 hrs)
+	- Packages
+	- Access Modifies (package)
+	
 ## Projects
 	- Composition
 	- ArrayList
 	- ArrayList-Expanded
 	- CookieStore
 	- CookieStore-Inheritance
+	
 ## Readings
 	- ???
 
