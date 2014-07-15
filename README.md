@@ -25,37 +25,43 @@
 	
 ####Module 2 (3 hrs)
 	- Methods - What are they?
-
+	- Polymorphism
 	- Animal Talk Lab
-		- Add classes for Dog, Cat and Dolphin
-		- Add method speak() to all of them
-	- Lab - Create Java Project and several classes with instance variables
-		- Cookie, Topping classes
 	
 ####Module 3 (3 hrs)
 	- Constructors
+		- Default Constructor (no arguments)
+		- Constructors serve as instance initializers
+		- Default Initializers Pattern
+	- Constructors Lab
 	- Getters and Setters
-	- Encapsulation
-	- Lab - Create constructors for Cookie and Topping
-	
+	- Constructors Lab
 ####Module 4 (3 hrs)
-
+	- Encapsulation
 	- Access Modifies (package, public,and private)
 	- Class variables
+	- Class methods
+	- Encapsulation Lab
 
 ###Week 2 (4 day week)
 
 ####Module 5 (3 hrs)
 	- Inheritance
 	- Access Modifies (protected)
+	- Shapes Lab
 	
 ####Module 6 (3 hrs)
-	- Overloading and Overriding Methods
 	- Arrays (built-in and ArrayList)
-	
-####Module 7 (3 hrs)
 	- Packages
 	- Access Modifies (package)
+	
+####Module 7 (3 hrs)
+	- Overloading methods
+		- Show System.out.println method Overloading
+	- Overriding methods
+		- Only occurs in subclassing
+	- Overloading has to do with specializing a method to take different types of arguments
+	- Overriding has to do with specialing a method in different classes in a inheritance heirarchy
 	
 ####Module 8 (3 hrs)
 	- Lab Project - Shapes Example
@@ -70,24 +76,46 @@
 ## Readings
 	- Object Oriented Programming Concepts
 		- http://docs.oracle.com/javase/tutorial/java/concepts/index.html
+	- 
 
 ##Instructor Notes
+
+###Constructors Notes
+	- A default constructor is added to a class if not specific constructors are declared. Instance variables are initialized to there default initial values.
+		- http://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
+
 ###Vehicle Lab
-		- Add classes for vehicle classes Car, Truck, BigRig, Submarine, AirPlane, Boat and Bulldozer
-		- Add instance varialbles to them for 
-			- color (a String)
-			- weight (a Float)
-			- running (a boolean)
-			- name (a String)
-		- Add a toString method
+	- Add classes for vehicle classes Car, Truck, BigRig, Submarine, AirPlane, Boat and Bulldozer
+	- Add instance varialbles to them for 
+		- color (a String)
+		- weight (a Float)
+		- running (a boolean)
+		- name (a String)
+	- Add a toString method
 		
 ###Animal Talk Lab
-		- Add classes for Dog, Cat and Dolphin
-		- Add method speak() to all of them
-			- Should return a String instance for how that animal speaks
+	- Add classes for Dog, Cat and Dolphin
+	- Add method speak() to all of them
+		- Should return a String instance for how that animal speaks
+	- Add method eat() to all of them
+
+###Constructors Lab
+	- Add constructors to your vehicle and animals classes that take same number and types of arguments as your instance variables
+	- Add constructors that call the fully general constructor and provide default values to that constructor for some of the args
+	
+###Encapsulation Lab
+	- ???
+	- ???
+	
+###Shapes Lab
+	- Shape class
+	- Rectangle class, Triangle class, Circle class
+	- Square class as a subclass of Rectangle
+	- Add a calcArea() method to all the classes
 
 #Java 2 Class 
 ## syllabus
+	- Interfaces
 	- Collections
 		- Collection Interfaces List, Map and Set
 	- Enum
@@ -206,9 +234,12 @@
 ###CSS
 
 ##Additional Resources
-- w3schools - http://www.w3schools.com/html/default.asp
+###Websites
+	- w3schools - http://www.w3schools.com/html/default.asp
 
-
+###Books
+	- Murach's Java Servlets and JSP 3rd Edition
+		- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=la_B001JP7JQI_1_5?s=books&ie=UTF8&qid=1405462180&sr=1-5
 
 #ACC Additional Materials
 
