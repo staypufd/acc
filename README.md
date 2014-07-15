@@ -110,6 +110,7 @@
 	+ Marc Andreson
 		++ Co-founder of Netscape with Jim Clark (of Standford and Xerox Parc - creator of VHDL)
 	+ Microsoft created IE from Mosaic base
+	
 ##Basic HTML Page
 * Tags
 	+ DOCTYPE declaration for HTML5 
@@ -122,6 +123,7 @@
 	+ images
 	+ Colors and Color Names
 	+ HTML Entities (special characters) < must be encoded as &lt and > must be encoded as &gt etc.
+	
 ##More HTML 
 * More Tags
 	+ style
