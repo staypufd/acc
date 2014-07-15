@@ -13,37 +13,52 @@
 ###Week 1 (4 day week)
 
 ####Module 1 (3 hrs)
+	- What is Object Oriented Programming?
 	- What are Objects?
 	- Classes
-
-####Module 2 (3 hrs)
 	- Instance variables
-	- Class variables
-
-####Module 3 (3 hrs)
-	- Methods
-
-####Module 4 (3 hrs)
-	- Constructors
 	- toString method
+	- Creating Java Project in Eclipse
+	- Vehicle Lab
+	
+
+	
+####Module 2 (3 hrs)
+	- Methods - What are they?
+
+	- Animal Talk Lab
+		- Add classes for Dog, Cat and Dolphin
+		- Add method speak() to all of them
+	- Lab - Create Java Project and several classes with instance variables
+		- Cookie, Topping classes
+	
+####Module 3 (3 hrs)
+	- Constructors
+	- Getters and Setters
+	- Encapsulation
+	- Lab - Create constructors for Cookie and Topping
+	
+####Module 4 (3 hrs)
+
+	- Access Modifies (package, public,and private)
+	- Class variables
 
 ###Week 2 (4 day week)
 
 ####Module 5 (3 hrs)
-	- Encapsulation
-	- Access Modifies (package, public,and private)
-	
-####Module 6 (3 hrs)
 	- Inheritance
 	- Access Modifies (protected)
 	
-####Module 7 (3 hrs)
+####Module 6 (3 hrs)
 	- Overloading and Overriding Methods
 	- Arrays (built-in and ArrayList)
 	
-####Module 8 (3 hrs)
+####Module 7 (3 hrs)
 	- Packages
 	- Access Modifies (package)
+	
+####Module 8 (3 hrs)
+	- Lab Project - Shapes Example
 	
 ## Projects
 	- Composition
@@ -53,10 +68,23 @@
 	- CookieStore-Inheritance
 	
 ## Readings
-	- ???
+	- Object Oriented Programming Concepts
+		- http://docs.oracle.com/javase/tutorial/java/concepts/index.html
 
 ##Instructor Notes
-	- ???
+###Vehicle Lab
+		- Add classes for vehicle classes Car, Truck, BigRig, Submarine, AirPlane, Boat and Bulldozer
+		- Add instance varialbles to them for 
+			- color (a String)
+			- weight (a Float)
+			- running (a boolean)
+			- name (a String)
+		- Add a toString method
+		
+###Animal Talk Lab
+		- Add classes for Dog, Cat and Dolphin
+		- Add method speak() to all of them
+			- Should return a String instance for how that animal speaks
 
 #Java 2 Class 
 ## syllabus
