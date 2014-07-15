@@ -7,7 +7,7 @@
 	- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
 
 #Java 1 Class
-- Syllabus
+## Syllabus
 	- What are Objects?
 	- Classes
 	- Instance variables
@@ -21,18 +21,18 @@
 	- Packages
 	- Inheritance
 	- Access Modifies (package, public, protected and private)
-- Projects
+## Projects
 	- Composition
 	- ArrayList
 	- ArrayList-Expanded
 	- CookieStore
 	- CookieStore-Inheritance
-- Readings
+## Readings
 	- ???
 
 
 #Java 2 Class 
-- syllabus
+## syllabus
 	- Collections
 		- Collection Interfaces List, Map and Set
 	- Enum
@@ -54,7 +54,7 @@
 	- Regular Expressions (RegEx)
 	- StringFormat class
 	- printf method on System.out
-- Projects
+## Projects
 	- WorldCupOfJava
 	- GreetingShapes
 	- TestSystemOutPrintln
@@ -65,7 +65,7 @@
 	- ExceptionHandling-Expanded
 	- Scanner
 	- StringManipulationAndFormating
-- Readings
+## Readings
 	- CRC - Class Responsibility Collaborators
 	    - A Laboratory For Teaching Object Oriented Thinking
 	    		- http://c2.com/doc/oopsla89/paper.html
@@ -83,60 +83,73 @@
 
 
 #Java 3 Class Info & Projects
-##HTML History
-* ARPANET
-	+ DOC Funded
-* TCP/IP
-* Internet
-* Tim Berners Lee
-	+ HTTP - Hyper Text Transfer Protocol
-	+ NeXT Machine
-	+ First web server
-	+ First browser
-	+ Open source
-	+ Hyper Text
-	+ Created the World Wide Web (www)
-* Mother of all Demos
-	+ https://www.youtube.com/watch?v=yJDv-zdhzMY&feature=kp
-	+ Showed so many things before there time
-		+ mice
-		+ hypertext
-		+ video conferencing
-		+ outlining
-		+ video overlays & blending
-		+ semantic data
-	+ Inspired Xerox Parc and others
-* Mosaic
-	+ Marc Andreson
-		++ Co-founder of Netscape with Jim Clark (of Standford and Xerox Parc - creator of VHDL)
-	+ Microsoft created IE from Mosaic base
+##Syllabus
+	- HTML - A Short History
+	- Basic HTML Tags
+	- More HTML Tags
+	- CSS
+	- HTTP - An Intro
 	
-##Basic HTML Page
-* Tags
-	+ DOCTYPE declaration for HTML5 
-	+ head
-	+ title
-	+ body
-	+ header (h1 - h5)
-	+ paragraphs
-	+ lists (ul, ol)
-	+ images
-	+ Colors and Color Names
-	+ HTML Entities (special characters) < must be encoded as &lt and > must be encoded as &gt etc.
+
+##Instructor Notes
+###HTML History
+- ARPANET
+	- DOC Funded
+- TCP/IP
+- Internet
+- Tim Berners Lee
+	- HTTP - Hyper Text Transfer Protocol
+	- NeXT Machine
+	- First web server
+	- First browser
+	- Open source
+	- Hyper Text
+	- Created the World Wide Web (www)
+- Mo-her of all Demos
+	- https://www.youtube.com/watch?v=yJDv-zdhzMY&feature=kp
+	- Showed so many things before there time
+		- mice
+		- hypertext
+		- video conferencing
+		- outlining
+		- video overlays & blending
+		- semantic data
+	- Inspired Xerox Parc and others
+- Mosaic
+	- Marc Andreson
+		- Co-founder of Netscape with Jim Clark (of Standford and Xerox Parc - creator of VHDL)
+	- Microsoft created IE from Mosaic base
 	
-##More HTML 
-* More Tags
-	+ style
-	+ link "<a>" tag
-	+ comments
-	+ formatting tags
-	+ div
-	+ span
-	+ form
-	+ input (only works in form tag)
+###Basic HTML Page
+- Tags
+	- DOCTYPE declaration for HTML5 
+	- head
+	- title
+	- body
+	- header (h1 - h5)
+	- paragraphs
+	- lists (ul, ol)
+	- images
+	- Colors and Color Names
+	- HTML Entities (special characters) < must be encoded as &lt and > must be encoded as &gt etc.
+	
+###More HTML 
+- More Tags
+	- style
+	- link "<a>" tag
+	- comments
+	- formatting tags
+	- div
+	- span
+	- form
+	- input (only works in form tag)
+
+###CSS
 
 ##Additional Resources
-* w3schools - http://www.w3schools.com/html/default.asp
+- w3schools - http://www.w3schools.com/html/default.asp
+
+
 
 #ACC Additional Materials
 
