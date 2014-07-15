@@ -7,11 +7,8 @@
 	- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=sr_1_2?s=books&ie=UTF8&qid=1405362741&sr=1-2&keywords=java+servlets
 
 #Java 1 Class (24 hrs)
-
 ## Syllabus
-
 ###Week 1 (4 day week)
-
 ####Module 1 (3 hrs)
 	- What is Object Oriented Programming?
 	- What are Objects?
@@ -44,7 +41,6 @@
 	- Encapsulation Lab
 
 ###Week 2 (4 day week)
-
 ####Module 5 (3 hrs)
 	- Inheritance
 	- Access Modifies (protected)
@@ -114,16 +110,28 @@
 	- Add a calcArea() method to all the classes
 
 #Java 2 Class 
-## syllabus
+## Syllabus
+###Week 1 (4 day week)
+####Module 1 (3 hrs)
 	- Interfaces
+	
+####Module 2 (3 hrs)
 	- Collections
 		- Collection Interfaces List, Map and Set
+	- TreeSet, TreeHash
+	- TreeSet, TreeMap
+	- 
+		
+####Module 3 (3 hrs)
 	- Enum
 		- Simple Enums
 			- Ordinal values
 		- Enum classes
 			- Customer Enum constructors
 			- Custom Enum behaviores
+
+		
+####Module 4 (3 hrs)
 	- Exceptions
 		- Exception
 		- Runtime Exception
@@ -131,12 +139,24 @@
 		- try, catch and finally
 		- Method signature for throwing a exception
 		- Debugging an Exception
+
+		
+###Week 2 (4 day week)
+
+####Module 5 (3 hrs)
 	- Scanner class usage
 		- hasNext
 		- Read, Eval, Print, Loops
+	
+####Module 6 (3 hrs)
 	- Regular Expressions (RegEx)
+	
+####Module 7 (3 hrs)
 	- StringFormat class
 	- printf method on System.out
+	
+####Module 8 (3 hrs)
+
 ## Projects
 	- WorldCupOfJava
 	- GreetingShapes
@@ -232,14 +252,11 @@
 		- input (only works in form tag)
 
 ###CSS
+	- ???
 
 ##Additional Resources
-###Websites
-	- w3schools - http://www.w3schools.com/html/default.asp
+	- W3Schools Web Tutorials - http://www.w3schools.com/
 
-###Books
-	- Murach's Java Servlets and JSP 3rd Edition
-		- http://www.amazon.com/Murachs-Java-Servlets-JSP-Murach/dp/1890774782/ref=la_B001JP7JQI_1_5?s=books&ie=UTF8&qid=1405462180&sr=1-5
 
 #ACC Additional Materials
 
