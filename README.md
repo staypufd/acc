@@ -60,7 +60,7 @@
 	- Overriding has to do with specialing a method in different classes in a inheritance heirarchy
 	
 ####Module 8 (3 hrs)
-	- Lab Project - Shapes Example
+	- End of Java2 Lab
 	
 ## Projects
 	- Composition
@@ -80,7 +80,7 @@
 	- A default constructor is added to a class if not specific constructors are declared. Instance variables are initialized to there default initial values.
 		- http://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
 
-###Vehicle Lab
+####Vehicle Lab
 	- Add classes for vehicle classes Car, Truck, BigRig, Submarine, AirPlane, Boat and Bulldozer
 	- Add instance varialbles to them for 
 		- color (a String)
@@ -89,7 +89,7 @@
 		- name (a String)
 	- Add a toString method
 		
-###Animal Talk Lab
+#### Animal Talk Lab
 	- Add classes for Dog, Cat and Dolphin
 	- Add method speak() to all of them
 		- Should return a String instance for how that animal speaks
@@ -100,8 +100,8 @@
 	- Add constructors that call the fully general constructor and provide default values to that constructor for some of the args
 	
 ###Encapsulation Lab
-	- ???
-	- ???
+	- Make sure your classes have Getters and Setters for all instance variables (ivars)
+	- Make sure your instance varialbes are either package, protected or private and know the difference for each one.
 	
 ###Shapes Lab
 	- Shape class
@@ -109,18 +109,23 @@
 	- Square class as a subclass of Rectangle
 	- Add a calcArea() method to all the classes
 
+###End of Java2 Lab
+	- Tic Tac Toe game
+	- Card Deck
+	- D&D Dice (My favorite)
+
 #Java 2 Class 
 ## Syllabus
 ###Week 1 (4 day week)
 ####Module 1 (3 hrs)
 	- Interfaces
+	- Designing with Composition, Inheritance and Interfaces
 	
 ####Module 2 (3 hrs)
 	- Collections
 		- Collection Interfaces List, Map and Set
-	- TreeSet, TreeHash
 	- TreeSet, TreeMap
-	- 
+	- ArrayList, ArrayMap
 		
 ####Module 3 (3 hrs)
 	- Enum
@@ -129,34 +134,38 @@
 		- Enum classes
 			- Customer Enum constructors
 			- Custom Enum behaviores
+	- Enum Lab
 
 		
 ####Module 4 (3 hrs)
-	- Exceptions
+	- What is an Exception?
+	- Types of Exceptions in Java
 		- Exception
+		- Error
 		- Runtime Exception
-		- throw
-		- try, catch and finally
-		- Method signature for throwing a exception
-		- Debugging an Exception
-
+	- Try and catch
 		
 ###Week 2 (4 day week)
 
 ####Module 5 (3 hrs)
-	- Scanner class usage
-		- hasNext
-		- Read, Eval, Print, Loops
+	- Throwing Exceptionsn
+	- Method signature for throwing a exception
+	- Debugging an Exception
+	- Exception Handling Lab
 	
 ####Module 6 (3 hrs)
-	- Regular Expressions (RegEx)
+	- Scanner class usage
+		- hasNext
+	- REPL's in Java
+		- Read, Eval, Print and Loop
+	- Scanner Lab
 	
 ####Module 7 (3 hrs)
-	- StringFormat class
-	- printf method on System.out
+	- Regular Expressions (RegEx)
 	
 ####Module 8 (3 hrs)
-
+	- StringFormat class
+	- printf method on System.out
 ## Projects
 	- WorldCupOfJava
 	- GreetingShapes
@@ -185,7 +194,7 @@
 		- http://www.atariarchives.org/basicgames/
 
 ##Instructor Notes
-	- ???
+	- Scanner Lab - ???
 
 #Java 3 Class Info & Projects
 ##Syllabus
