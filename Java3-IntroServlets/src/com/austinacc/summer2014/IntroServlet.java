@@ -48,7 +48,7 @@ public class IntroServlet extends HttpServlet {
 			Float foosValue = new Float(fooValueString);
 			System.out.println("Foo has a value of: " + foosValue.floatValue());
 			
-			response.getWriter().println("<h1>Foo has a value of: " + foosValue.floatValue() + "</h1>");
+			response.getWriter().println("<strong>Foo has a value of: " + foosValue.floatValue() + "</strong>");
 		}
 		String name = request.getParameter("name");
 		if (name != null) {
@@ -62,9 +62,15 @@ public class IntroServlet extends HttpServlet {
 		}
 		
 		// response.getWriter().println("This is some boring text");
-		// response.getWriter().print("<h1>Title</h1>");
-		response.getWriter().println("<p>This is really cool</p> <a href=\"http://localhost:8080/Java3-IntroServlets/IntroServlet?foo=55\">Call ourseleves with foo=55</a>");
 		
+		// If we don't set the content type to text/html then the text gets sent
+		// back as just text
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		pw.print("<DOCTYPE! html> <head><title>Intro Servlet</title></head> <body>");
+		pw.print("<h1>Title</h1>");
+		pw.print("<p>This is really cool</p> <a href=\"http://localhost:8080/Java3-IntroServlets/IntroServlet?foo=55\">Call ourseleves with foo=55</a>");
+		pw.println("</body>");
 	}
 
 	/**
