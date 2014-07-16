@@ -76,11 +76,12 @@
 
 ##Instructor Notes
 
-###Constructors Notes
+###Constructors Additional Notes
 	- A default constructor is added to a class if not specific constructors are declared. Instance variables are initialized to there default initial values.
 		- http://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
 
-####Vehicle Lab
+## Labs
+###Vehicle Lab
 	- Add classes for vehicle classes Car, Truck, BigRig, Submarine, AirPlane, Boat and Bulldozer
 	- Add instance varialbles to them for 
 		- color (a String)
@@ -89,7 +90,7 @@
 		- name (a String)
 	- Add a toString method
 		
-#### Animal Talk Lab
+###Animal Talk Lab
 	- Add classes for Dog, Cat and Dolphin
 	- Add method speak() to all of them
 		- Should return a String instance for how that animal speaks
@@ -198,20 +199,62 @@
 
 #Java 3 Class Info & Projects
 ##Syllabus
-	- HTML - A Short History
-	- Basic HTML Tags
-	- More HTML Tags
-	- CSS
+
 	- HTTP - An Intro
 	- Servlets
 	- JSP's
 	- JSTL
+	
+###Week 1 (4 day week)
+####Module 1 (3 hrs)
+	- HTML - A Short History
+	- Basic HTML Tags
+####Module 2 (3 hrs)
+	- More HTML Tags
+		- div
+		- br
+		- hr
+		- table
+			- th
+			- td
+		- strong
+	- CSS
+		- Tag styling
+		- Class styling
+		- Id styling
+		- .css file
+			- Included into a HTML file via the <link> tag
+		- Style attributes
+		- Style sizes like pt, px and em
+		- Percentage sizes
+	- CSS Frameworks
+		- Foundation 3 or 4
+		- Bootstrap 3
+####Module 3 (3 hrs)
+	- What is a Servlet?
+	- What is JSP?
+	- What is a Web Server?
+	- GET and POST HTTP Methods and what they do
+	- Demo of Creating a Servlet Project with Eclipse
+	- Lab Simple GET Servlet
+####Module 4 (3 hrs)
+
+###Week 2 (4 day week)
+####Module 5 (3 hrs)
+####Module 6 (3 hrs)
+####Module 7 (3 hrs)
+####Module 8 (3 hrs)
+
+##Projects
+
 
 ##Instructor Notes
 ###HTML History
 	- ARPANET
-		- DOC Funded
+		- US DOD Funded
+		- Originally connected 4 sites
 	- TCP/IP
+		- Transmission Control Protocol/Interconnect Protocol
 	- Internet
 	- Tim Berners Lee
 		- HTTP - Hyper Text Transfer Protocol
@@ -261,9 +304,16 @@
 		- input (only works in form tag)
 
 ###CSS
-	- ???
+	- Tag styling
+	- Class styling
+	- Id styling
+	- .css file
+		- Included into a HTML file via the <link> tag
+	- Style attributes
+	- Style sizes like pt, px and em
+	- Percentage sizes
 
-##Additional Resources
+##Readings
 	- W3Schools Web Tutorials - http://www.w3schools.com/
 
 
