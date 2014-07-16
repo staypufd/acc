@@ -234,14 +234,83 @@
 	- What is a Servlet?
 	- What is JSP?
 	- What is a Web Server?
-	- GET and POST HTTP Methods and what they do
 	- Demo of Creating a Servlet Project with Eclipse
+		- Servlet class
+		- web.xml
+			- web.xml Tags
+				- <servlet> tag
+					- <servlet-name> tag is unique name of the servlet in the web.xml file
+					- <servlet-class> tag is the fully qualified class of the servlet
+				- <servlet-mapping>
+					- <servlet-name> tag is the unique name of the servlet that was specified in the <servlet> tag in the web.xml
+					- <url-pattern> tag is the URI/URL pattern that the servlet name is mapped too
+		- Servlet Annotaions
+			- @WebServlet
+				- @WebServlet(name="TiresTestServlet", urlPatterns=("/tires", "/tiresList", "/addTires"))
+	- GET HTTP Method
+		- Request parameters
+			- ?action=add&name=Sam&state=TX
+			- http://www.accedu.com/tiresList?action=add&name=Sam&state=TX
 	- Lab Simple GET Servlet
 ####Module 4 (3 hrs)
+	- HTML Form tag
+		- Uses GET by default
+		- <form action="emailList" method="post">
+		- <input> tag
+			- Types
+				- hidden
+				- text
+				- email
+				- submit
+				- button
+				- checkbox
+				- color
+				- date
+				- datetime
+				- datetime-local
+				- file
+				- image
+				- month
+				- number
+				- password
+				- radio
+				- range
+				- reset
+				- search
+				- tel
+				- time
+				- url
+				- week
+		- <lable> tag
+		- Hidden <input> fields
+			- <input type="hidden" name="action" value="add">
+
 
 ###Week 2 (4 day week)
 ####Module 5 (3 hrs)
+	- Java Server Page (JSP)
+	- POST HTTP Method
+	- Request Parameters
+		- request.getParameter(String parameterName)
+		- request.setParameter(String name, String value)
+	- Request Forwarding
+		- Forward to a HTML page
+		- Forward to a JSP
+		- Forward to a Servlet
+	- Response Redirecting
+		- Redirect relative to current directory
+		- Redirect relative to servlet engine
+		- Redirect to a different server
+
+
+
 ####Module 6 (3 hrs)
+	- Validate Date
+		- Client Side (Requires JavaScript)
+		- Server Side
+	- Servlet Initialization Paramters in web.xml
+	- Error Handling Pages
+		- 404 Errors
 ####Module 7 (3 hrs)
 ####Module 8 (3 hrs)
 
