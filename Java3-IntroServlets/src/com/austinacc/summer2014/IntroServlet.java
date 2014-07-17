@@ -86,7 +86,14 @@ public class IntroServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	}
 
-	// Useful for debugging
+	
+	
+	/*
+	 * 
+	 * Helper Functions that are useful for debugging
+	 * 
+	 */
+
 	private void printOutRequestParameters(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		PrintWriter pw = response.getWriter(); 
