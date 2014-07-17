@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="styles/main.css" type="text/css"/>
+</head>
+<body>
+
+	<h1>Register For Discount Coupons!</h1>
+	<p>To get emails once a month with coupons, 
+	enter you name and email below</p>
+	
+	<form action="POSTExampleServlet" method="post">
+		<input type="hidden" name="action" value="addCouponSubscriber">
+		
+		<label>First Name:</label>
+		<input type="text" name="firstName" required><br>
+		
+		<label>Last Name:</label>
+		<input type="text" name="lastName" required><br>
+		
+		<label>Email:</label>
+		<input type="text" name="email" required><br>
+		
+		<label>&nbsp;</label>
+		<input type="submit" value="Sign up" id="submit">
+	
+	</form>
+
+</body>
+</html>
