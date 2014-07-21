@@ -1,4 +1,4 @@
-package com.austincc.java3.projects;
+package com.austinacc.java3.projects;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.austincc.java3.projects.domain.Person;
+import com.austinacc.java3.projects.domain.Person;
+
 
 /**
- * Servlet implementation class PostServletExample
+ * Servlet implementation class POSTExampleServlet
  */
 @WebServlet("/POSTExampleServlet")
 public class POSTExampleServlet extends HttpServlet {
@@ -32,17 +33,20 @@ public class POSTExampleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		printOutRequestParameters(request, response);
-		doPost(request, response);
+		// printOutRequestParameters(request, response);
+		System.out.println(request.getScheme());
+		
+		// This is the GET or POST
+		System.out.println(request.getMethod());
+		doPost(request, response);  
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		String url = "/index.html";
 		
 		// Find out what action was requested
@@ -82,20 +86,22 @@ public class POSTExampleServlet extends HttpServlet {
 		
 	}
 
-	
 	/*
 	 * 
 	 * Helper Functions that are useful for debugging
 	 * 
 	 */
 
-	private void printOutRequestParameters(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void printOutRequestParameters(HttpServletRequest request, HttpServletResponse response) 
+			throws IOException {
 
 		PrintWriter pw = response.getWriter(); 
-		pw.print("<table style=\"background-color: grey;text-align:center\"><tr><th style=\"background-color:lightgrey\" colspan=\"2\">Params</th></tr><th>Name</th><th>Value</th>");
+		pw.print("<table style=\"background-color: grey;"
+				+ "text-align:center\"><tr><th style=\"background-color:lightgrey\" "
+				+ "colspan=\"2\">Params</th></tr><th>Name</th><th>Value</th>");
 		
 		// Print out the parameters that we pass with the URL request
-		for ( Enumeration<String> enumeration = request.getParameterNames(); enumeration.hasMoreElements(); ) {
+		for ( Enumeration<String> enumeration = request.getParameterNames(); enumeration.hasMoreElements();) {
 			String paramName = (String) enumeration.nextElement();
 			String paramValue = request.getParameter(paramName);
 			pw.print("<tr><td>" + paramName + "</td><td>" + paramValue + "</td></tr>");
@@ -106,5 +112,16 @@ public class POSTExampleServlet extends HttpServlet {
 		
 		pw.print("</table>");
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
