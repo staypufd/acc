@@ -80,6 +80,7 @@ public class ValidateCouponSignupServlet extends HttpServlet {
 				errorMessage = "Please enter all the data fields!";
 				url = "/index.jsp";
 			} 
+			
 			// Is the email address a valid email address?
 			else if (!isEmailOk(email)) 
 			{
