@@ -17,13 +17,13 @@
 		<input type="hidden" name="action" value="addCouponSubscriber">
 		
 		<label>First Name:</label>
-		<input type="text" name="firstName"><br>
+		<input type="text" name="firstName" value="${firstName}"><br>
 		
 		<label>Last Name:</label>
-		<input type="text" name="lastName"><br>
+		<input type="text" name="lastName" value="${lastName}"><br>
 		
 		<label>Email:</label>
-		<input type="text" name="email"><br>
+		<input type="text" name="email" value="${email}"><br>
 		
 		<label>&nbsp;</label>
 		<input type="submit" value="Sign up" id="submit">
