@@ -11,7 +11,7 @@
 	<p>To get emails once a month with coupons, 
 	enter you name and email below</p>
 	
-	<p style="color:red">${message}</p>
+	<p style="color:red">${errorMessage}</p>
 	 
 	<form action="ValidateCouponSignupServlet" method="post">
 		<input type="hidden" name="action" value="addCouponSubscriber">

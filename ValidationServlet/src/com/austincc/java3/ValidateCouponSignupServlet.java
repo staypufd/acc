@@ -48,28 +48,48 @@ public class ValidateCouponSignupServlet extends HttpServlet {
 
 		// Default url
 		String url = "/index.jsp";
-		// Default message
-		String message = "";
+		// Default error message
+		String errorMessage = "";
 
-		// Find out what action was requested
+		// Get the requested action and if there 
+		// isn't an action, set one along with an empty errorMessage
 		String action = request.getParameter("action");
 		if (action == null) {
 			action = "showMain";
+			errorMessage = "";
 		}
 
-		// Do the action and set which URL we need to go to after we're done
+		// If the action is showMain, then go to the index.jsp page
 		if (action.equalsIgnoreCase("showMain")) {
 			url = "/index.jsp";
-			message = "";
-		} else if (action.equalsIgnoreCase("addCouponSubscriber")) {
+			errorMessage = "";
+		}
+		
+		
+		// If the action is addCouponSubscriber (they clicked submit button on the form)
+		if (action.equalsIgnoreCase("addCouponSubscriber")) {
 			// get the request parameters
 			String firstName = request.getParameter("firstName");
 			String lastName = request.getParameter("lastName");
 			String email = request.getParameter("email");
 
-			validateData(firstName, lastName, email, message, url, request);
-	
-			if (message.isEmpty()) {
+			// Is any of the data null or empty?
+			if ((firstName == null) || (lastName == null) || (email == null)
+					|| (firstName.isEmpty()) || (lastName.isEmpty())
+					|| (email.isEmpty())) {
+				errorMessage = "Please enter all the data fields!";
+				url = "/index.jsp";
+			} 
+			// Is the email address a valid email address?
+			else if (!isEmailOk(email)) 
+			{
+				errorMessage = "bad email address";
+				url = "/index.jsp";
+			}
+			
+			// If no error message is set (the errorMessage is still an empty string)
+			// Create a person and add it to request object, set url to go too
+			if (errorMessage.isEmpty()) {
 				// Simulate storing to a db...
 				Person p = new Person();
 				p.setFirstName(firstName);
@@ -83,7 +103,16 @@ public class ValidateCouponSignupServlet extends HttpServlet {
 				// to forward too
 				request.setAttribute("person", p);
 				url = "/thankyou.jsp";
-				message = "";
+				errorMessage = "";			// Don't need to do this since we know it's empty here, but did anyway
+			}
+			
+			// If there was a error message
+			if (!errorMessage.isEmpty()) {
+				// Add the user data back to request along with error message
+				request.setAttribute("firstName", firstName);
+				request.setAttribute("lastName", lastName);
+				request.setAttribute("email", email);
+				request.setAttribute("errorMessage", errorMessage);
 			}
 
 		}
@@ -91,37 +120,12 @@ public class ValidateCouponSignupServlet extends HttpServlet {
 
 		// DEBUGGING
 		// Print out the request parms in request
-		printOutRequestParams(request);
+		// printOutRequestParams(request);
 		
 		// forward request and response objects to the specified URL
 		getServletContext().getRequestDispatcher(url)
 				.forward(request, response);
 
-	}
-
-	private void validateData(String firstName, String lastName, String email, String message, String url,
-			HttpServletRequest request) {
-		
-		// Is all data there?
-		if ((firstName == null) || (lastName == null) || (email == null)
-				|| (firstName.isEmpty()) || (lastName.isEmpty())
-				|| (email.isEmpty())) {
-			message = "Please enter all the data fields!";
-			url = "/index.jsp";
-		} // Is the email address a valid email address?
-		else if (!isEmailOk(email)) {
-			message = "bad email address";
-			url = "/index.jsp";
-		}
-
-		if (!message.isEmpty()) {
-			request.setAttribute("firstName", firstName);
-			request.setAttribute("lastName", lastName);
-			request.setAttribute("email", email);
-			// Add the error message to the request
-			request.setAttribute("message", message);
-		}
-		
 	}
 
 	// Use a regular expresion to check the email address
