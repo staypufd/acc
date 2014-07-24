@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Goodbye</title>
+<title>See Ya Page</title>
 </head>
 <body>
-	<h1>Goodbye!</h1>
-	
-
+	<h1>I'm outta here!</h1>
 </body>
 </html>
