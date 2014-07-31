@@ -43,7 +43,6 @@ public class EJavaGuruArray2 {
 		sb.insert(7, 'q');
 		sb.replace(7, 8, "w");
 		
-		StringBuilder strbuilder = new StringBuilder();
 		
 		System.out.println(sb);
 		
