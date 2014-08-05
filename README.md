@@ -414,3 +414,14 @@
 
 ##RegEx 
 - http://refcardz.dzone.com/refcardz/regular-expressions#refcard-download-social-buttons-display
+
+##Java Text Handling
+[Java Tutorial - Text](http://docs.oracle.com/javase/tutorial/i18n/text/index.html)
+
+###ASCII Code Table 
+- http://www.asciitable.com
+This is used during the Intro class when talking about the *char* data type. It also used again in the Certification class when we go over it and use it to point out that a *int* can be assigned to a char and then when the char is printed it will show the ASCII character for that value.
+
+###Unicode Code Tables
+- http://unicode-table.com/en/#001C
+Usage from Java is show here [Java Tutorial - Internationalization - Unicode](http://docs.oracle.com/javase/tutorial/i18n/text/unicode.html)
