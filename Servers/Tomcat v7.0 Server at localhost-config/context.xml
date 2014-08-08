@@ -29,5 +29,9 @@
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
+    
+    <Resource name="jdbc/testDB" auth="Container" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000" username="SA" password=""
+		driverClassName="org.hsqldb.jdbc.JDBCDriver" url="jdbc:hsqldb:hsql://localhost:9001/" />
 
 </Context>

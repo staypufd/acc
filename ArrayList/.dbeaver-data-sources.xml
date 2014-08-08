@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="hsqldb_server-1407533706136--1092052427" provider="generic" driver="hsqldb_server" name="HSQLDB - New Connection" create-date="1407533807132" save-password="true" show-system-objects="true" read-only="false">
+		<connection host="localhost" port="9001" server="" database="" url="jdbc:hsqldb:hsql://localhost:9001/" user="" type="dev">
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" user="" save-password="false">
+				<property name="port" value="22"/>
+				<property name="keyPath" value=""/>
+				<property name="host" value=""/>
+				<property name="authType" value="PASSWORD"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" user="" save-password="false">
+				<property name="socks-host" value=""/>
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+		</connection>
+	</data-source>
+</data-sources>
