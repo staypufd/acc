@@ -28,8 +28,7 @@ public class Board {
 	
 	Move moves[][];
 	
-	int rowSize;
-	int colSize;
+	private int dimension;
 	
 	// Standard Tic-Tac-Toe size board
 	public Board() {
@@ -38,19 +37,34 @@ public class Board {
 	
 	// Boards can be other sizes as well.
 	public Board(int boardSize) {
-		rowSize = boardSize;
-		colSize = boardSize;
+		dimension = boardSize;
+		dimension = boardSize;
 		moves = new Move[boardSize][boardSize];
 		this.clear();
 	}
 	
 	// Clear the board by putting Empty everywhere
 	public void clear() {
-		for (int i = 0; i < this.rowSize; i++) {
-			for (int j = 0; j < this.colSize; j++) {
+		for (int i = 0; i < this.dimension; i++) {
+			for (int j = 0; j < this.dimension; j++) {
 				moves[i][j] = new Move(i, j, Piece.EMPTY);
 			}
 		}
+	}
+	
+	public ArrayList<Move> getAvailableMoves() {
+		ArrayList<Move> availableMoves = new ArrayList<Move>();
+		
+		for (Move[] moves2 : moves) {
+			for (Move move : moves2) {
+				if (move.getValue() == Piece.EMPTY) {
+					availableMoves.add(move);
+				}
+			}
+		}
+		
+		return availableMoves;
+		
 	}
 	
 	// Do we have a winner or a tie
@@ -67,10 +81,10 @@ public class Board {
 	
 	public void setMove(Move m) throws BadRowOrColumnIndex {
 		// put the move into board
-		if (m.getRow() >= rowSize) {
+		if (m.getRow() >= dimension) {
 			throw new BadRowOrColumnIndex(m.getRowAsString());
 		}
-		if (m.getColumn() >= colSize) {
+		if (m.getColumn() >= dimension) {
 			throw new BadRowOrColumnIndex(m.getColumnAsString());
 		}
 		moves[m.getRow()][m.getColumn()] = m;
@@ -81,6 +95,10 @@ public class Board {
 		// and return the Move at that spot
 		
 		return moves[x][y];
+	}
+	
+	public int getBoardDimension() {
+		return dimension;
 	}
 
 	
@@ -123,7 +141,7 @@ public class Board {
 		
 		
 		// First diagonal -- top-left down to bottom-right
-		for (int i = 0; i < moves.length; i++) {
+		for (int i = 0; i < dimension; i++) {
 			Enum<Piece> p = moves[i][i].getValue();
 			diagonal.add(p);
 		}
@@ -137,8 +155,8 @@ public class Board {
 		diagonal.clear();
 		
 		// Second diagonal -- top-right down to bottom-left
-		for (int col = 0; col < colSize; col++) {
-			int rowX = (colSize - 1) - col;
+		for (int col = 0; col < dimension; col++) {
+			int rowX = (dimension - 1) - col;
 			int rowY = col;
 			Enum<Piece> p = moves[rowX][rowY].getValue();
 			diagonal.add(p);
@@ -158,10 +176,10 @@ public class Board {
 		boolean anyColumnIsAWinner = false;
 		
 		// Go thru each column
-		for (int col = 0; col < colSize; col++ ) {
+		for (int col = 0; col < dimension; col++ ) {
 			ArrayList<Enum<Piece>> columnValues = new ArrayList<>();
 			// Go to each row for this column
-			for (int row = 0; row < rowSize; row++) {
+			for (int row = 0; row < dimension; row++) {
 				Enum<Piece> val = moves[row][col].getValue();
 				columnValues.add(val);
 			}
@@ -221,6 +239,13 @@ public class Board {
 	}
 	
 	
+	
+	/* *******************************************************************************
+	 * Testing and Simulation Helper Methods
+	 * *******************************************************************************
+	 */
+	
+	
 	/*
 	 * Random Board Generator
 	 * NOTE:  Not all random boards will be valid Tic-Tac-Toe games
@@ -230,7 +255,7 @@ public class Board {
 			for (int j = 0; j < moves.length; j++) {
 				// Get a random number between 0 and 2. ** Read doc for nextInt() method **
 				Random r = new Random();
-				int intValue = r.nextInt(3);
+				int intValue = r.nextInt(getBoardDimension());
 				
 				// Get the Piece from the Piece enum's values list for the random integer
 				Enum<Piece> piece = Piece.values()[intValue];
@@ -381,6 +406,56 @@ public class Board {
 			setMove(new Move(0, 2, Piece.EMPTY));
 			setMove(new Move(1, 2, Piece.EMPTY));
 			setMove(new Move(2, 2, Piece.O));
+			
+		} catch (BadRowOrColumnIndex e) {
+			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
+			// e.printStackTrace();
+		}
+
+	}
+	
+	public void topLeftBottomRightOs() {
+		
+		// Test Board you can change to whatever config you want.
+		// Each block of 3 is a column.  The second number is the column.
+		// Notice that all the column numbers in each group of three are teh same
+		try {
+			setMove(new Move(0, 0, Piece.O));
+			setMove(new Move(1, 0, Piece.EMPTY));
+			setMove(new Move(2, 0, Piece.EMPTY));
+			
+			setMove(new Move(0, 1, Piece.EMPTY));
+			setMove(new Move(1, 1, Piece.O));
+			setMove(new Move(2, 1, Piece.EMPTY));
+			
+			setMove(new Move(0, 2, Piece.EMPTY));
+			setMove(new Move(1, 2, Piece.EMPTY));
+			setMove(new Move(2, 2, Piece.O));
+			
+		} catch (BadRowOrColumnIndex e) {
+			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
+			// e.printStackTrace();
+		}
+
+	}
+	
+	public void topRightBottomLeftOs() {
+		
+		// Test Board you can change to whatever config you want.
+		// Each block of 3 is a column.  The second number is the column.
+		// Notice that all the column numbers in each group of three are teh same
+		try {
+			setMove(new Move(0, 0, Piece.EMPTY));
+			setMove(new Move(1, 0, Piece.EMPTY));
+			setMove(new Move(2, 0, Piece.O));
+			
+			setMove(new Move(0, 1, Piece.EMPTY));
+			setMove(new Move(1, 1, Piece.O));
+			setMove(new Move(2, 1, Piece.EMPTY));
+			
+			setMove(new Move(0, 2, Piece.O));
+			setMove(new Move(1, 2, Piece.EMPTY));
+			setMove(new Move(2, 2, Piece.EMPTY));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");

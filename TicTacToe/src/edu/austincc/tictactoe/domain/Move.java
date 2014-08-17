@@ -27,6 +27,10 @@ public class Move {
 	public Enum<Piece> getValue() {
 		return value;
 	}
+	
+	public void setValue(Enum<Piece> team) {
+		this.value = team;
+	}
 
 	// Getter Methods
 	public int getRow() {
