@@ -33,7 +33,7 @@ public class Game {
 		int numTurns = ( aGameBoard.getBoardDimension() * aGameBoard.getBoardDimension() ) ;
 		
 		do {
-			
+			// Player 1
 			player1.nextMove(aGameBoard);
 			printGameBoard(aGameBoard);
 			numTurns -= 1;
@@ -41,7 +41,10 @@ public class Game {
 				hasWinner = true;
 				winningPlayer = player1;
 				break;
-			} else {
+			} 
+			
+			// Player 2
+			if (!hasWinner) {
 				player2.nextMove(aGameBoard);
 				printGameBoard(aGameBoard);
 				numTurns -= 1;
@@ -53,19 +56,16 @@ public class Game {
 			}
 			
 			
-		} while ( hasWinner == false | (numTurns >= 0));
+		} while ( hasWinner == false & (numTurns > 0));
 		
 		
 		if (aGameBoard.hasWinner()) {
 			System.out.println(winningPlayer.team + " is a winner!");
-			printGameBoard(aGameBoard);
 		} else {
 			System.out.println("We have a tie!");
-			printGameBoard(aGameBoard);
+
 		}
 		
-
-
 	}
 	
 	private static void printGameBoard(Board aBoard) {
