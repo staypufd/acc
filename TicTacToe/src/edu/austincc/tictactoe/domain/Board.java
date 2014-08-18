@@ -36,9 +36,9 @@ public class Board {
 	}
 	
 	// Boards can be other sizes as well.
-	public Board(int boardDiminesion) {
-		dimension = boardDiminesion;
-		moves = new Move[boardDiminesion][boardDiminesion];
+	public Board(int boardDimension) {
+		dimension = boardDimension;
+		moves = new Move[boardDimension][boardDimension];
 		this.clear();
 	}
 	
@@ -49,6 +49,19 @@ public class Board {
 				moves[i][j] = new Move(i, j, Piece.EMPTY);
 			}
 		}
+	}
+	
+	public ArrayList<Move> getMoves() {
+		ArrayList<Move> theMoves = new ArrayList<Move>();
+		
+		for (Move[] moves2 : moves) {
+			for (Move move : moves2) {
+				theMoves.add(move);
+				
+			}
+		}
+		
+		return theMoves;
 	}
 	
 	public ArrayList<Move> getAvailableMoves() {
@@ -78,7 +91,7 @@ public class Board {
 		return winner;
 	}
 	
-	public void setMove(Move m) throws BadRowOrColumnIndex {
+	public void makeMove(Move m) throws BadRowOrColumnIndex {
 		// put the move into board
 		if (m.getRow() >= dimension) {
 			throw new BadRowOrColumnIndex(m.getRowAsString());
@@ -96,7 +109,7 @@ public class Board {
 		return moves[x][y];
 	}
 	
-	public int getBoardDimension() {
+	public int getDimension() {
 		return dimension;
 	}
 
@@ -254,7 +267,7 @@ public class Board {
 			for (int j = 0; j < moves.length; j++) {
 				// Get a random number between 0 and 2. ** Read doc for nextInt() method **
 				Random r = new Random();
-				int intValue = r.nextInt(getBoardDimension());
+				int intValue = r.nextInt(getDimension());
 				
 				// Get the Piece from the Piece enum's values list for the random integer
 				Enum<Piece> piece = Piece.values()[intValue];
@@ -269,17 +282,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.O));
-			setMove(new Move(1, 0, Piece.O));
-			setMove(new Move(2, 0, Piece.O));
+			makeMove(new Move(0, 0, Piece.O));
+			makeMove(new Move(1, 0, Piece.O));
+			makeMove(new Move(2, 0, Piece.O));
 			
-			setMove(new Move(0, 1, Piece.EMPTY));
-			setMove(new Move(1, 1, Piece.EMPTY));
-			setMove(new Move(2, 1, Piece.EMPTY));
+			makeMove(new Move(0, 1, Piece.EMPTY));
+			makeMove(new Move(1, 1, Piece.EMPTY));
+			makeMove(new Move(2, 1, Piece.EMPTY));
 			
-			setMove(new Move(0, 2, Piece.EMPTY));
-			setMove(new Move(1, 2, Piece.EMPTY));
-			setMove(new Move(2, 2, Piece.EMPTY));
+			makeMove(new Move(0, 2, Piece.EMPTY));
+			makeMove(new Move(1, 2, Piece.EMPTY));
+			makeMove(new Move(2, 2, Piece.EMPTY));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -294,17 +307,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.EMPTY));
-			setMove(new Move(1, 0, Piece.EMPTY));
-			setMove(new Move(2, 0, Piece.EMPTY));
+			makeMove(new Move(0, 0, Piece.EMPTY));
+			makeMove(new Move(1, 0, Piece.EMPTY));
+			makeMove(new Move(2, 0, Piece.EMPTY));
 			
-			setMove(new Move(0, 1, Piece.O));
-			setMove(new Move(1, 1, Piece.O));
-			setMove(new Move(2, 1, Piece.O));
+			makeMove(new Move(0, 1, Piece.O));
+			makeMove(new Move(1, 1, Piece.O));
+			makeMove(new Move(2, 1, Piece.O));
 			
-			setMove(new Move(0, 2, Piece.EMPTY));
-			setMove(new Move(1, 2, Piece.EMPTY));
-			setMove(new Move(2, 2, Piece.EMPTY));
+			makeMove(new Move(0, 2, Piece.EMPTY));
+			makeMove(new Move(1, 2, Piece.EMPTY));
+			makeMove(new Move(2, 2, Piece.EMPTY));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -319,17 +332,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.EMPTY));
-			setMove(new Move(1, 0, Piece.EMPTY));
-			setMove(new Move(2, 0, Piece.EMPTY));
+			makeMove(new Move(0, 0, Piece.EMPTY));
+			makeMove(new Move(1, 0, Piece.EMPTY));
+			makeMove(new Move(2, 0, Piece.EMPTY));
 			
-			setMove(new Move(0, 1, Piece.EMPTY));
-			setMove(new Move(1, 1, Piece.EMPTY));
-			setMove(new Move(2, 1, Piece.EMPTY));
+			makeMove(new Move(0, 1, Piece.EMPTY));
+			makeMove(new Move(1, 1, Piece.EMPTY));
+			makeMove(new Move(2, 1, Piece.EMPTY));
 			
-			setMove(new Move(0, 2, Piece.O));
-			setMove(new Move(1, 2, Piece.O));
-			setMove(new Move(2, 2, Piece.O));
+			makeMove(new Move(0, 2, Piece.O));
+			makeMove(new Move(1, 2, Piece.O));
+			makeMove(new Move(2, 2, Piece.O));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -344,17 +357,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.O));
-			setMove(new Move(1, 0, Piece.EMPTY));
-			setMove(new Move(2, 0, Piece.EMPTY));
+			makeMove(new Move(0, 0, Piece.O));
+			makeMove(new Move(1, 0, Piece.EMPTY));
+			makeMove(new Move(2, 0, Piece.EMPTY));
 			
-			setMove(new Move(0, 1, Piece.O));
-			setMove(new Move(1, 1, Piece.EMPTY));
-			setMove(new Move(2, 1, Piece.EMPTY));
+			makeMove(new Move(0, 1, Piece.O));
+			makeMove(new Move(1, 1, Piece.EMPTY));
+			makeMove(new Move(2, 1, Piece.EMPTY));
 			
-			setMove(new Move(0, 2, Piece.O));
-			setMove(new Move(1, 2, Piece.EMPTY));
-			setMove(new Move(2, 2, Piece.EMPTY));
+			makeMove(new Move(0, 2, Piece.O));
+			makeMove(new Move(1, 2, Piece.EMPTY));
+			makeMove(new Move(2, 2, Piece.EMPTY));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -369,17 +382,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.EMPTY));
-			setMove(new Move(1, 0, Piece.O));
-			setMove(new Move(2, 0, Piece.EMPTY));
+			makeMove(new Move(0, 0, Piece.EMPTY));
+			makeMove(new Move(1, 0, Piece.O));
+			makeMove(new Move(2, 0, Piece.EMPTY));
 			
-			setMove(new Move(0, 1, Piece.EMPTY));
-			setMove(new Move(1, 1, Piece.O));
-			setMove(new Move(2, 1, Piece.EMPTY));
+			makeMove(new Move(0, 1, Piece.EMPTY));
+			makeMove(new Move(1, 1, Piece.O));
+			makeMove(new Move(2, 1, Piece.EMPTY));
 			
-			setMove(new Move(0, 2, Piece.EMPTY));
-			setMove(new Move(1, 2, Piece.O));
-			setMove(new Move(2, 2, Piece.EMPTY));
+			makeMove(new Move(0, 2, Piece.EMPTY));
+			makeMove(new Move(1, 2, Piece.O));
+			makeMove(new Move(2, 2, Piece.EMPTY));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -394,17 +407,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.EMPTY));
-			setMove(new Move(1, 0, Piece.EMPTY));
-			setMove(new Move(2, 0, Piece.O));
+			makeMove(new Move(0, 0, Piece.EMPTY));
+			makeMove(new Move(1, 0, Piece.EMPTY));
+			makeMove(new Move(2, 0, Piece.O));
 			
-			setMove(new Move(0, 1, Piece.EMPTY));
-			setMove(new Move(1, 1, Piece.EMPTY));
-			setMove(new Move(2, 1, Piece.O));
+			makeMove(new Move(0, 1, Piece.EMPTY));
+			makeMove(new Move(1, 1, Piece.EMPTY));
+			makeMove(new Move(2, 1, Piece.O));
 			
-			setMove(new Move(0, 2, Piece.EMPTY));
-			setMove(new Move(1, 2, Piece.EMPTY));
-			setMove(new Move(2, 2, Piece.O));
+			makeMove(new Move(0, 2, Piece.EMPTY));
+			makeMove(new Move(1, 2, Piece.EMPTY));
+			makeMove(new Move(2, 2, Piece.O));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -419,17 +432,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.O));
-			setMove(new Move(1, 0, Piece.EMPTY));
-			setMove(new Move(2, 0, Piece.EMPTY));
+			makeMove(new Move(0, 0, Piece.O));
+			makeMove(new Move(1, 0, Piece.EMPTY));
+			makeMove(new Move(2, 0, Piece.EMPTY));
 			
-			setMove(new Move(0, 1, Piece.EMPTY));
-			setMove(new Move(1, 1, Piece.O));
-			setMove(new Move(2, 1, Piece.EMPTY));
+			makeMove(new Move(0, 1, Piece.EMPTY));
+			makeMove(new Move(1, 1, Piece.O));
+			makeMove(new Move(2, 1, Piece.EMPTY));
 			
-			setMove(new Move(0, 2, Piece.EMPTY));
-			setMove(new Move(1, 2, Piece.EMPTY));
-			setMove(new Move(2, 2, Piece.O));
+			makeMove(new Move(0, 2, Piece.EMPTY));
+			makeMove(new Move(1, 2, Piece.EMPTY));
+			makeMove(new Move(2, 2, Piece.O));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");
@@ -444,17 +457,17 @@ public class Board {
 		// Each block of 3 is a column.  The second number is the column.
 		// Notice that all the column numbers in each group of three are teh same
 		try {
-			setMove(new Move(0, 0, Piece.EMPTY));
-			setMove(new Move(1, 0, Piece.EMPTY));
-			setMove(new Move(2, 0, Piece.O));
+			makeMove(new Move(0, 0, Piece.EMPTY));
+			makeMove(new Move(1, 0, Piece.EMPTY));
+			makeMove(new Move(2, 0, Piece.O));
 			
-			setMove(new Move(0, 1, Piece.EMPTY));
-			setMove(new Move(1, 1, Piece.O));
-			setMove(new Move(2, 1, Piece.EMPTY));
+			makeMove(new Move(0, 1, Piece.EMPTY));
+			makeMove(new Move(1, 1, Piece.O));
+			makeMove(new Move(2, 1, Piece.EMPTY));
 			
-			setMove(new Move(0, 2, Piece.O));
-			setMove(new Move(1, 2, Piece.EMPTY));
-			setMove(new Move(2, 2, Piece.EMPTY));
+			makeMove(new Move(0, 2, Piece.O));
+			makeMove(new Move(1, 2, Piece.EMPTY));
+			makeMove(new Move(2, 2, Piece.EMPTY));
 			
 		} catch (BadRowOrColumnIndex e) {
 			System.out.println("Can't put a move at " + e.getMessage() + " row or column.");

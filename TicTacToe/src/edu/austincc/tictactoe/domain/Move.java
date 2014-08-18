@@ -28,7 +28,7 @@ public class Move {
 		return piece;
 	}
 	
-	public void setValue(Enum<Piece> piece) {
+	public void setPiece(Enum<Piece> piece) {
 		this.piece = piece;
 	}
 

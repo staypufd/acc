@@ -24,13 +24,11 @@ public class Player {
 			int emptyMoveIndexToTake = r.nextInt(listOfAvailableAMoves.size());
 			Move aMove = listOfAvailableAMoves.get(emptyMoveIndexToTake);
 			// Change the move to be my teams piece
-			aMove.setValue(team);
+			aMove.setPiece(team);
 		}
 	
 		
 	}
 	
 
-	
-	
 }

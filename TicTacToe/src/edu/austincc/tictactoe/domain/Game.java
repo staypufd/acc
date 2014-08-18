@@ -8,8 +8,8 @@ public class Game {
 	public static void main(String[] args) {
 		
 		Board aGameBoard = new Board();
-		Player player1 = new Player(Piece.O, aGameBoard.getBoardDimension());
-		Player player2 = new Player(Piece.X, aGameBoard.getBoardDimension());
+		Player player1 = new Player(Piece.O, aGameBoard.getDimension());
+		Player player2 = new Player(Piece.X, aGameBoard.getDimension());
 		
 		
 		// Use these for testing. You may also want to look at JUnit
@@ -29,7 +29,7 @@ public class Game {
 		
 		// Number of Turns is dimensions squared / 2 (the number of players)
 		// Example:  3x3 board is 3*3 = 9.  So at 9 turns tbe game is over and it is a tie
-		int numTurns = ( aGameBoard.getBoardDimension() * aGameBoard.getBoardDimension() ) ;
+		int numTurns = ( aGameBoard.getDimension() * aGameBoard.getDimension() ) ;
 		
 		do {
 			// Player 1
@@ -51,8 +51,6 @@ public class Game {
 				winningPlayer = player2;
 				break;
 			}
-			
-			
 			
 		} while ( hasWinner == false & (numTurns > 0));
 		
