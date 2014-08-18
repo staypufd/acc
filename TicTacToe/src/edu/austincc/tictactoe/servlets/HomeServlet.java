@@ -1,6 +1,7 @@
 package edu.austincc.tictactoe.servlets;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -55,7 +56,24 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Post accomplished");
+		response.getWriter().append("Post accomplished\n");
+		response.getWriter().append("Attrs are: \n");
+		Enumeration<String> ae = request.getAttributeNames();
+		while(ae.hasMoreElements()) {
+			String attrName = ae.nextElement();
+			response.getWriter().append(attrName + "\n");
+		}
+		
+		response.getWriter().append("Params are: \n");
+		Enumeration<String> pe = request.getParameterNames();
+		while(pe.hasMoreElements()) {
+			String paramName = pe.nextElement();
+			response.getWriter().append(paramName + "\n");
+		}
+		
+		response.getWriter().append(request.getParameter("rowColPiece"));
+		
+		
 	}
 
 }

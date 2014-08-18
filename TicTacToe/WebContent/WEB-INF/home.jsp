@@ -24,10 +24,8 @@
 				<c:forEach begin="0" end="${board.dimension - 1 }" step="1" var="col">
 	
 						<td>
-							<form method="post">
-								<button>
-									<c:out value="${board.getMove(row, col).piece}"></c:out>
-								</button>
+							<form method="post" ACTION="HomeServlet">
+								<INPUT TYPE="SUBMIT" name="rowColPiece" VALUE="${row},${col},${board.getMove(row, col).piece}">
 							</form>
 						</td>
 		
