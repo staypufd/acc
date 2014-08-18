@@ -1,6 +1,5 @@
 package edu.austincc.tictactoe.domain;
 
-import java.awt.Dimension;
 
 public class Game {
 	
@@ -44,16 +43,15 @@ public class Game {
 			} 
 			
 			// Player 2
-			if (!hasWinner) {
-				player2.nextMove(aGameBoard);
-				printGameBoard(aGameBoard);
-				numTurns -= 1;
-				if ( aGameBoard.hasWinner() ) {
-					hasWinner = true;
-					winningPlayer = player2;
-					break;
-				}
+			player2.nextMove(aGameBoard);
+			printGameBoard(aGameBoard);
+			numTurns -= 1;
+			if ( aGameBoard.hasWinner() ) {
+				hasWinner = true;
+				winningPlayer = player2;
+				break;
 			}
+			
 			
 			
 		} while ( hasWinner == false & (numTurns > 0));

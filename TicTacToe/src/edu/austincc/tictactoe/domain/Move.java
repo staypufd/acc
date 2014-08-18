@@ -16,20 +16,20 @@ public class Move {
 	private int row;
 	private int column;
 
-	private Enum<Piece> value;
+	private Enum<Piece> piece;
 	
 	public Move(int row, int column, Enum<Piece> piece) {
 		this.row = row;
 		this.column = column;
-		this.value = piece;
+		this.piece = piece;
 	}
 	
-	public Enum<Piece> getValue() {
-		return value;
+	public Enum<Piece> getPiece() {
+		return piece;
 	}
 	
-	public void setValue(Enum<Piece> team) {
-		this.value = team;
+	public void setValue(Enum<Piece> piece) {
+		this.piece = piece;
 	}
 
 	// Getter Methods

@@ -36,10 +36,9 @@ public class Board {
 	}
 	
 	// Boards can be other sizes as well.
-	public Board(int boardSize) {
-		dimension = boardSize;
-		dimension = boardSize;
-		moves = new Move[boardSize][boardSize];
+	public Board(int boardDiminesion) {
+		dimension = boardDiminesion;
+		moves = new Move[boardDiminesion][boardDiminesion];
 		this.clear();
 	}
 	
@@ -57,7 +56,7 @@ public class Board {
 		
 		for (Move[] moves2 : moves) {
 			for (Move move : moves2) {
-				if (move.getValue() == Piece.EMPTY) {
+				if (move.getPiece() == Piece.EMPTY) {
 					availableMoves.add(move);
 				}
 			}
@@ -119,10 +118,10 @@ public class Board {
 		for (Move[] movesArray : movesArrays) {
 			for (Move move : movesArray) {
 				arraySB.append(" ");
-				if (move.getValue() == Piece.EMPTY) {
+				if (move.getPiece() == Piece.EMPTY) {
 					arraySB.append(".");
 				} else {
-					arraySB.append(move.getValue());
+					arraySB.append(move.getPiece());
 				}
 			}
 			arraySB.append("\n");
@@ -142,7 +141,7 @@ public class Board {
 		
 		// First diagonal -- top-left down to bottom-right
 		for (int i = 0; i < dimension; i++) {
-			Enum<Piece> p = moves[i][i].getValue();
+			Enum<Piece> p = moves[i][i].getPiece();
 			diagonal.add(p);
 		}
 		
@@ -158,7 +157,7 @@ public class Board {
 		for (int col = 0; col < dimension; col++) {
 			int rowX = (dimension - 1) - col;
 			int rowY = col;
-			Enum<Piece> p = moves[rowX][rowY].getValue();
+			Enum<Piece> p = moves[rowX][rowY].getPiece();
 			diagonal.add(p);
 		}
 		
@@ -180,15 +179,14 @@ public class Board {
 			ArrayList<Enum<Piece>> columnValues = new ArrayList<>();
 			// Go to each row for this column
 			for (int row = 0; row < dimension; row++) {
-				Enum<Piece> val = moves[row][col].getValue();
+				Enum<Piece> val = moves[row][col].getPiece();
 				columnValues.add(val);
 			}
 			// if they are all empty it's not a winner
 			// else if they are all the same.
-			
-			
 			if ( allMovesTheSameExcludingEmptyValues(columnValues) ) {
 				anyColumnIsAWinner = true;
+				return anyColumnIsAWinner;
 			}
 		}
 		
@@ -205,10 +203,11 @@ public class Board {
 			ArrayList<Enum<Piece>> rowPieces = new ArrayList<Enum<Piece>>();
 			// Add each row item to rowPieces
 			for (Move move : row) {
-				rowPieces.add(move.getValue());
+				rowPieces.add(move.getPiece());
 			}
 			if ( allMovesTheSameExcludingEmptyValues(rowPieces)) {
 				anyRowIsAWinner = true;
+				return anyRowIsAWinner;
 			}
 		}
 		
