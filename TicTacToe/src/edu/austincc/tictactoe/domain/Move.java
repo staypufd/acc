@@ -13,6 +13,8 @@ package edu.austincc.tictactoe.domain;
  */
 
 public class Move {
+
+
 	private int row;
 	private int column;
 
@@ -51,4 +53,11 @@ public class Move {
 		return new Integer(column).toString();
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Move [row=").append(row).append(", column=")
+				.append(column).append(", piece=").append(piece).append("]");
+		return builder.toString();
+	}
 }

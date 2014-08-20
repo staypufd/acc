@@ -1,6 +1,7 @@
 package edu.austincc.tictactoe.domain;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
@@ -29,6 +30,8 @@ public class Board {
 	Move moves[][];
 	
 	private int dimension;
+	
+	private Enum<Piece> winningTeam = Piece.EMPTY;
 	
 	// Standard Tic-Tac-Toe size board
 	public Board() {
@@ -102,6 +105,22 @@ public class Board {
 		moves[m.getRow()][m.getColumn()] = m;
 	}
 	
+	
+	// Random Team is always O.  This is hard-coded but should be a game parameter for later
+	// TODO - Fix this to not always be set to O's when doing a two player game
+	public void makeRandomMove() {
+		// Choose a random move out of the ones still avaialble
+				List<Move> listOfAvailableAMoves = getAvailableMoves();
+				
+				Random r = new Random();
+				if ( listOfAvailableAMoves.size() != 0) {
+					int emptyMoveIndexToTake = r.nextInt(listOfAvailableAMoves.size());
+					Move aMove = listOfAvailableAMoves.get(emptyMoveIndexToTake);
+					// Change the move to be my teams piece
+					aMove.setPiece(Piece.O);
+				}
+	}
+	
 	public Move getMove(int x, int y) {
 		// use the x and y to look into our state
 		// and return the Move at that spot
@@ -114,6 +133,10 @@ public class Board {
 	}
 
 	
+	public Enum<Piece> getWinningTeam() {
+		return winningTeam;
+	}
+
 	/** 
 	 * Output helpers for this class.  toString() and helpers for it to use.
 	 */
@@ -228,6 +251,7 @@ public class Board {
 	}
 	
 	// Are all the values the same?  Empty values ares still considered false.
+	@SuppressWarnings("unchecked")
 	private boolean allMovesTheSameExcludingEmptyValues(ArrayList<Enum<Piece>> arrayOfPieces) 
 	{
 		// By using a set we can see if there is more than one type of piece
@@ -236,6 +260,7 @@ public class Board {
 		// type of piece will be in the Set.  This works b/c Pieces are an Enum.
 		Set<Enum<Piece>> isSameSet = new TreeSet<Enum<Piece>>();
 		isSameSet.addAll(arrayOfPieces);
+	
 		
 		// If the set is bigger than 1 then it must have multiple types of 
 		// Pieces, so they aren't all the same.
@@ -244,7 +269,8 @@ public class Board {
 		if (isSameSet.size() > 1 | (isSameSet.contains(Piece.EMPTY)) ) {
 			return false;
 		} else {
-			
+			Object[] w = isSameSet.toArray();
+			this.winningTeam = (Enum<Piece>)(w[0]);
 			return true;
 		}
 		

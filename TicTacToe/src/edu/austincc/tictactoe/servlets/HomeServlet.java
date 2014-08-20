@@ -38,13 +38,13 @@ public class HomeServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if ( session.getAttribute("board") == null ) {
 			Board b = new Board();
-			try {
-				b.makeMove(new Move(1, 1, Piece.X));
-				System.out.println(b.toString());
-			} catch (BadRowOrColumnIndex e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				b.makeMove(new Move(1, 1, Piece.X));
+//				System.out.println(b.toString());
+//			} catch (BadRowOrColumnIndex e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			session.setAttribute("board", b );
 		}
 		
@@ -56,24 +56,85 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Post accomplished\n");
-		response.getWriter().append("Attrs are: \n");
-		Enumeration<String> ae = request.getAttributeNames();
-		while(ae.hasMoreElements()) {
-			String attrName = ae.nextElement();
-			response.getWriter().append(attrName + "\n");
+//		response.getWriter().append("Post accomplished\n");
+//		response.getWriter().append("Attrs are: \n");
+//		Enumeration<String> ae = request.getAttributeNames();
+//		while(ae.hasMoreElements()) {
+//			String attrName = ae.nextElement();
+//			response.getWriter().append(attrName + "\n");
+//		}
+//		
+//		response.getWriter().append("Params are: \n");
+//		Enumeration<String> pe = request.getParameterNames();
+//		while(pe.hasMoreElements()) {
+//			String paramName = pe.nextElement();
+//			response.getWriter().append(paramName + "\n");
+//		}
+		
+// response.getWriter().append("---\n");
+//response.getWriter().append(request.getParameter("rowColPiece"));
+		
+		// Getting the session
+		HttpSession session = request.getSession();
+		
+		// Handle reset board request
+		String reset = request.getParameter("reset");
+		if ( (reset != null) ) {
+			if ( reset.equalsIgnoreCase("reset") ) {
+				if ( session.getAttribute("board") != null ) {
+					Board b = (Board)session.getAttribute("board");
+					b.clear();
+				}
+				// response.getWriter().append(b.toString());
+				// session.removeAttribute("board");
+				// getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+				return;
+			}
 		}
 		
-		response.getWriter().append("Params are: \n");
-		Enumeration<String> pe = request.getParameterNames();
-		while(pe.hasMoreElements()) {
-			String paramName = pe.nextElement();
-			response.getWriter().append(paramName + "\n");
+		// Handle new move made 
+		String moveString = request.getParameter("rowColPiece");
+		if ( moveString != null) {
+			String[] tokenizedMove = moveString.split(",");
+	
+			Integer row = new Integer(tokenizedMove[0]);
+			Integer col = new Integer(tokenizedMove[1]);
+			if ( !tokenizedMove[2].equalsIgnoreCase("X") && 
+					!tokenizedMove[2].equalsIgnoreCase("O") ) {
+				Enum<Piece> p = Piece.X;
+				Move newMove = new Move(row, col, p);
+				// response.getWriter().append("---\n" + newMove.toString());
+
+				if ( session.getAttribute("board") != null ) {
+					Board b = (Board)session.getAttribute("board");
+					
+					if (b != null) {
+						// response.getWriter().append("Board is not null");
+						try {
+							// Player X's Move
+							b.makeMove(newMove);
+							// Computers Move (makeRandomMove is always O's - see the source)
+							b.makeRandomMove();
+						} catch (BadRowOrColumnIndex e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						if ( b.hasWinner() ) {
+							request.setAttribute("winner", "true");
+							request.setAttribute("winningTeam", b.getWinningTeam());
+						}
+						getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+						return;
+					}
+				}
+			}
+			
 		}
 		
-		response.getWriter().append(request.getParameter("rowColPiece"));
-		
-		
+		// Default case
+		getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 	}
+
 
 }

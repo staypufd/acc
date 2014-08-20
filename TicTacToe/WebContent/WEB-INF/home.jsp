@@ -18,6 +18,17 @@
 <body>
 	<h1>Tic Tac Toe!</h1>
 	
+	<c:if test="${winner == true }">
+		<h2>
+			Winner is: <c:out value=" ${winningTeam }"></c:out>
+			<form method="post" ACTION="HomeServlet">
+				<INPUT TYPE="SUBMIT" name="reset" VALUE="reset">
+			</form>
+		</h2>
+		
+	</c:if>
+
+	
 	<table class="gameTable">
 		<c:forEach begin="0" end="${board.dimension -1 }" step="1" var="row">
 			<tr>
