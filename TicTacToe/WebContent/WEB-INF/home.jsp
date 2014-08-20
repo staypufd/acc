@@ -8,41 +8,39 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
       
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<link rel="stylesheet" type="text/css" href="game.css">
-
-<title>Tic Tac Toe Game</title>
-</head>
-<body>
-	<h1>Tic Tac Toe!</h1>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	<c:if test="${winner == true }">
-		<h2>
-			Winner is: <c:out value=" ${winningTeam }"></c:out>
-			<form method="post" ACTION="HomeServlet">
-				<INPUT TYPE="SUBMIT" name="reset" VALUE="reset">
-			</form>
-		</h2>
+	<link rel="stylesheet" type="text/css" href="game.css">
+	
+	<title>Tic Tac Toe Game</title>
+	</head>
+	<body>
+		<h1>Tic Tac Toe!</h1>
 		
-	</c:if>
-
+		<c:if test="${winner == true }">
+			<h2>
+				Winner is: <c:out value=" ${winningTeam }"></c:out>
+				<form method="post" ACTION="HomeServlet">
+					<INPUT TYPE="SUBMIT" name="reset" VALUE="New Game">
+				</form>
+			</h2>
+		</c:if>
 	
-	<table class="gameTable">
-		<c:forEach begin="0" end="${board.dimension -1 }" step="1" var="row">
-			<tr>
-				<c:forEach begin="0" end="${board.dimension - 1 }" step="1" var="col">
-	
-						<td>
-							<form method="post" ACTION="HomeServlet">
-								<INPUT TYPE="SUBMIT" name="rowColPiece" VALUE="${row},${col},${board.getMove(row, col).piece}">
-							</form>
-						</td>
+		<table class="gameTable">
+			<c:forEach begin="0" end="${board.dimension -1 }" step="1" var="row">
+				<tr>
+					<c:forEach begin="0" end="${board.dimension - 1 }" step="1" var="col">
 		
-				</c:forEach>
-			</tr>
-		</c:forEach>
-	</table>
-</body>
+							<td>
+								<form method="post" ACTION="HomeServlet">
+									<INPUT TYPE="SUBMIT" name="rowColPiece" VALUE="${row},${col},${board.getMove(row, col).piece}" >
+								</form>
+							</td>
+			
+					</c:forEach>
+				</tr>
+			</c:forEach>
+		</table>
+	</body>
 </html>

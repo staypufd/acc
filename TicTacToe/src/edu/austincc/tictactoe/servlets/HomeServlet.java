@@ -85,9 +85,6 @@ public class HomeServlet extends HttpServlet {
 					Board b = (Board)session.getAttribute("board");
 					b.clear();
 				}
-				// response.getWriter().append(b.toString());
-				// session.removeAttribute("board");
-				// getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 				getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 				return;
 			}
