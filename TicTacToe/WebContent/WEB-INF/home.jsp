@@ -51,7 +51,7 @@
 									<!--   <INPUT TYPE="SUBMIT" name="rowColPiece" VALUE="${row},${col},${board.getMove(row, col).piece}" > -->  
 									<button name="rowColPiece" value="${row},${col},${board.getMove(row, col).piece}" >
 										<c:choose>
-										    <c:when test= "${board.getMove(row, col).piece == \"EMPTY\"}">
+										    <c:when test= "${board.getMove(row, col).piece == 'EMPTY'}">
 										       &nbsp;-&nbsp;
 										    </c:when>
 										    <c:otherwise>
