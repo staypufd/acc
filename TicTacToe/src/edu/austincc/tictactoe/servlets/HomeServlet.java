@@ -80,7 +80,7 @@ public class HomeServlet extends HttpServlet {
 		// Handle reset board request
 		String reset = request.getParameter("reset");
 		if ( (reset != null) ) {
-			if ( reset.equalsIgnoreCase("reset") ) {
+			if ( reset.equalsIgnoreCase("new game") ) {
 				if ( session.getAttribute("board") != null ) {
 					Board b = (Board)session.getAttribute("board");
 					b.clear();
@@ -121,6 +121,11 @@ public class HomeServlet extends HttpServlet {
 							request.setAttribute("winner", "true");
 							request.setAttribute("winningTeam", b.getWinningTeam());
 						}
+						
+						if ( b.hasTie() ) {
+							request.setAttribute("tie", "true");
+						}
+						
 						getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 						return;
 					}

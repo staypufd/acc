@@ -26,6 +26,16 @@
 				</form>
 			</h2>
 		</c:if>
+		
+		<c:if test="${tie == true }">
+			<h2>
+				We have a tie!
+				<form method="post" ACTION="HomeServlet">
+					<INPUT TYPE="SUBMIT" name="reset" VALUE="New Game">
+				</form>
+			</h2>
+		</c:if>
+		
 	
 		<table class="gameTable">
 			<c:forEach begin="0" end="${board.dimension -1 }" step="1" var="row">
@@ -34,7 +44,21 @@
 		
 							<td>
 								<form method="post" ACTION="HomeServlet">
-									<INPUT TYPE="SUBMIT" name="rowColPiece" VALUE="${row},${col},${board.getMove(row, col).piece}" >
+									<!-- 
+									The INPUT tag below is useful for debugging as it will show you the coordinates and piece value.
+									To use it, comment out the <button> tag and then uncomment the <input> tag.
+									-->
+									<!--   <INPUT TYPE="SUBMIT" name="rowColPiece" VALUE="${row},${col},${board.getMove(row, col).piece}" > -->  
+									<button name="rowColPiece" value="${row},${col},${board.getMove(row, col).piece}" >
+										<c:choose>
+										    <c:when test= "${board.getMove(row, col).piece == \"EMPTY\"}">
+										       &nbsp;-&nbsp;
+										    </c:when>
+										    <c:otherwise>
+										        ${board.getMove(row, col).piece}
+										    </c:otherwise>
+										</c:choose>
+									</button> 
 								</form>
 							</td>
 			

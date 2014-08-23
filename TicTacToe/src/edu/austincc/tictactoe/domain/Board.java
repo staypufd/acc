@@ -83,7 +83,7 @@ public class Board {
 	}
 	
 	// Do we have a winner or a tie
-	public boolean hasWinner () {
+	public boolean hasWinner() {
 		boolean winner = false;
 		
 		// Any winner?
@@ -92,6 +92,15 @@ public class Board {
 		}
 		
 		return winner;
+	}
+	
+	public boolean hasTie() {
+		
+		if (hasWinner() == false && getAvailableMoves().size() == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public void makeMove(Move m) throws BadRowOrColumnIndex {
