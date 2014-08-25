@@ -77,18 +77,18 @@ public class HomeServlet extends HttpServlet {
 		// Getting the session
 		HttpSession session = request.getSession();
 		
-		// Handle reset board request
-		String reset = request.getParameter("reset");
-		if ( (reset != null) ) {
-			if ( reset.equalsIgnoreCase("new game") ) {
-				if ( session.getAttribute("board") != null ) {
-					Board b = (Board)session.getAttribute("board");
-					b.clear();
-				}
-				getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
-				return;
-			}
-		}
+//		// Handle reset board request
+//		String reset = request.getParameter("reset");
+//		if ( (reset != null) ) {
+//			if ( reset.equalsIgnoreCase("new game") ) {
+//				if ( session.getAttribute("board") != null ) {
+//					Board b = (Board)session.getAttribute("board");
+//					b.clear();
+//				}
+//				getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+//				return;
+//			}
+//		}
 		
 		// Handle new move made 
 		String moveString = request.getParameter("rowColPiece");

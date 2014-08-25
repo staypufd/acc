@@ -1,5 +1,6 @@
-@CHARSET "UTF-8";
-
+body {
+	background-color: rgb(6, 255, 43);
+}
 
 table, th, td {
    border: 1px solid black;
