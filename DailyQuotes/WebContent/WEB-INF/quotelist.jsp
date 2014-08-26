@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,13 +23,22 @@
 </head>
 <body>
 	<h1>Today's Quotes</h1>
-	
-	<c:forEach items="${theQuotes }" var="aQuote">
-		<p>${aQuote.quote }</p>
-		<p><c:out value="${aQuote.author }"/></p>
-		<hr>
-	</c:forEach> 
-	
+	<div class="container">
+		<table class="table table-striped">
+			<c:forEach items="${theQuotes }" var="aQuote">
+				<tr>
+					<td>
+						<blockquote class="blockquote">
+							<p>${aQuote.quote }</p>
+							<footer>
+								<c:out value="${aQuote.author }"/>
+							</footer>
+						</blockquote>
+					</td>
+				</tr>
+			</c:forEach> 
+		</table>
+	</div>
 </body>
 </html>
 
