@@ -24,6 +24,8 @@
 <body>
 	<h1>Today's Quotes</h1>
 	<div class="container">
+	
+<!-- 
 		<table class="table table-striped">
 			<c:forEach items="${theQuotes }" var="aQuote">
 				<tr>
@@ -38,9 +40,45 @@
 				</tr>
 			</c:forEach> 
 		</table>
+-->	
+
+	<sql:query var="results" 		
+				sql="select id, quotation, author from quote;"
+				dataSource="jdbc/quoteDB">
+	</sql:query>
+
+	<table class="table table-striped">		
+	<c:forEach items="${results.rows }" var="row">
+				<tr>
+					<td>
+						<blockquote class="blockquote">
+							<p>${row.id} - ${row.quotation }</p>
+							<footer>
+								<c:out value="${row.author  }"/> 
+							</footer>
+						</blockquote>
+					</td>
+				</tr>
+			</c:forEach> 
+		</table>
+		
 	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
