@@ -25,7 +25,7 @@
 	<h1>Today's Quotes</h1>
 	<div class="container">
 	
-<!-- 
+ 
 		<table class="table table-striped">
 			<c:forEach items="${theQuotes }" var="aQuote">
 				<tr>
@@ -40,8 +40,9 @@
 				</tr>
 			</c:forEach> 
 		</table>
--->	
 
+
+<!-- 
 	<sql:query var="results" 		
 				sql="select id, quotation, author from quote;"
 				dataSource="jdbc/quoteDB">
@@ -61,7 +62,7 @@
 				</tr>
 			</c:forEach> 
 		</table>
-		
+-->	
 	</div>
 </body>
 </html>

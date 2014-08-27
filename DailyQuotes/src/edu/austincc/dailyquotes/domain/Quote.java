@@ -13,14 +13,16 @@ public class Quote {
 
 		private String quote;
 		private String author;
-		private Date   quoteDate = null;
 		
+		public Quote(String quote, String author) {
+			this.quote = quote;
+			this.author = author;
+		}
+
 		// Class Methods
 		public static Quote testQuote() {
 			
-			Quote aQuote = new Quote();
-			aQuote.setAuthor("Einstein");
-			aQuote.setQuote("The hardest thing in the world to understand is the income tax.");
+			Quote aQuote = new Quote("The hardest thing in the world to understand is the income tax.", "Einstein");
 			return aQuote;
 		}
 		
@@ -51,18 +53,7 @@ public class Quote {
 		public void setAuthor(String author) {
 			this.author = author;
 		}
-		/**
-		 * @return the quoteDate
-		 */
-		public Date getQuoteDate() {
-			return quoteDate;
-		}
-		/**
-		 * @param quoteDate the quoteDate to set
-		 */
-		public void setQuoteDate(Date quoteDate) {
-			this.quoteDate = quoteDate;
-		}
+
 
 		/* (non-Javadoc)
 		 * @see java.lang.Object#toString()
@@ -71,7 +62,7 @@ public class Quote {
 		public String toString() {
 			StringBuilder builder = new StringBuilder();
 			builder.append("Quote [quote=").append(quote).append(", author=")
-					.append(author).append(", quoteDate=").append(quoteDate)
+					.append(author)
 					.append("]");
 			return builder.toString();
 		}

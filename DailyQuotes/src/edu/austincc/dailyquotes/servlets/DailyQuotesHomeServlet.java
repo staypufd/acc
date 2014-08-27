@@ -2,11 +2,15 @@ package edu.austincc.dailyquotes.servlets;
 
 import java.io.IOException;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import edu.austincc.dailyquotes.domain.Quote;
 import edu.austincc.dailyquotes.managers.QuotesManager;
@@ -17,7 +21,10 @@ import edu.austincc.dailyquotes.managers.QuotesManager;
 @WebServlet(description = "Main home page for our Daily Quotes Application", urlPatterns = { "/DailyQuotesHomeServlet" })
 public class DailyQuotesHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
+	@Resource(name="jdbc/quoteDB")
+	DataSource ds;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +40,7 @@ public class DailyQuotesHomeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append(Quote.testQuote().toString());
 		
-		QuotesManager qm = new QuotesManager();
+		QuotesManager qm = new QuotesManager(ds);
 		request.setAttribute("theQuotes", qm.getQuotes());
 		
 		getServletContext().getRequestDispatcher("/WEB-INF/quotelist.jsp").forward(request, response);
