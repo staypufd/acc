@@ -18,17 +18,18 @@ import edu.austincc.dailyquotes.managers.QuotesManager;
 /**
  * Servlet implementation class DailyQuotesHomeServlet
  */
-@WebServlet(description = "Main home page for our Daily Quotes Application", urlPatterns = { "/DailyQuotesHomeServlet" })
-public class DailyQuotesHomeServlet extends HttpServlet {
+@WebServlet(description = "Main home page for our Daily Quotes Application", 
+			urlPatterns = { "/homeServlet", ""})
+public class homeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	@Resource(name="jdbc/quoteDB")
+	@Resource(name="jdbc/DB")
 	DataSource ds;
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DailyQuotesHomeServlet() {
+    public homeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

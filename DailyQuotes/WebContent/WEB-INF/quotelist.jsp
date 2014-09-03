@@ -10,7 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
 
-     <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="<c:url value="/bootstrap-3.2-3.0-dist/css/bootstrap.min.css"/>">
 
 <!-- Optional theme -->
@@ -23,17 +23,21 @@
 </head>
 <body>
 	<h1>Today's Quotes</h1>
+	<form action="newQuoteServlet" method="get" name="newQuote">
+		<input class="btn btn-primary" type="submit" title="newQuote" value="New Quote">
+	</form>
+	<br/>
 	<div class="container">
-	
- 
 		<table class="table table-striped">
 			<c:forEach items="${theQuotes }" var="aQuote">
 				<tr>
 					<td>
 						<blockquote class="blockquote">
-							<p>${aQuote.quote }</p>
+							<c:out value="${ aQuote.id }"/>
+							&mdash;
+							<c:out value="${aQuote.quote }"/>
 							<footer>
-								<c:out value="${aQuote.author }"/>
+								<c:out value="${ aQuote.author }"/>
 							</footer>
 						</blockquote>
 					</td>
@@ -42,7 +46,9 @@
 		</table>
 
 
-<!-- 
+
+<%-- This is a JSP comment 
+
 	<sql:query var="results" 		
 				sql="select id, quotation, author from quote;"
 				dataSource="jdbc/quoteDB">
@@ -62,7 +68,7 @@
 				</tr>
 			</c:forEach> 
 		</table>
--->	
+--%>
 	</div>
 </body>
 </html>

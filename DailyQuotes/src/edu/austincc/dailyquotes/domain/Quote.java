@@ -11,6 +11,7 @@ import java.util.Date;
  */
 public class Quote {
 
+		int id;
 		private String quote;
 		private String author;
 		
@@ -18,23 +19,46 @@ public class Quote {
 			this.quote = quote;
 			this.author = author;
 		}
+		
+		public Quote(int id, String quote, String author) {
+			this.id = id;
+			this.quote = quote;
+			this.author = author;
+		}
 
 		// Class Methods
 		public static Quote testQuote() {
 			
-			Quote aQuote = new Quote("The hardest thing in the world to understand is the income tax.", "Einstein");
+			Quote aQuote = new Quote(-1, "The hardest thing in the world to understand is the income tax.", "Einstein");
 			return aQuote;
 		}
 		
 		// Instance Methods
 		
 		// Getters & Setters
+		
+		
+		/**
+		 * @return the id
+		 */
+		public int getId() {
+			return id;
+		}
+
+		/**
+		 * @param id the id to set
+		 */
+		public void setId(int id) {
+			this.id = id;
+		}
+
 		/**
 		 * @return the quote
 		 */
 		public String getQuote() {
 			return quote;
 		}
+
 		/**
 		 * @param quote the quote to set
 		 */
@@ -54,6 +78,7 @@ public class Quote {
 			this.author = author;
 		}
 
+		
 
 		/* (non-Javadoc)
 		 * @see java.lang.Object#toString()

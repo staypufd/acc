@@ -26,10 +26,10 @@ public class QuotesManager {
 			Connection connection;
 			connection = ds.getConnection();
 			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("select quotation, author from quote");
+			ResultSet resultSet = statement.executeQuery("select id, quotation, author from quotes");
 			
 			while (resultSet.next()) {
-				quotes.add(new Quote(resultSet.getString("quotation"), resultSet.getString("author")));
+				quotes.add(new Quote(resultSet.getInt("id"), resultSet.getString("quotation"), resultSet.getString("author")));
 			}
 			
 		} catch (SQLException e) {
@@ -38,6 +38,22 @@ public class QuotesManager {
 		}
 
 		return quotes;
+	}
+	
+	public boolean saveQuote(Quote aQuote) {
+		boolean succeeded = false;
+		try {
+			Connection connection;
+			connection = ds.getConnection();
+			Statement statement = connection.createStatement();
+			succeeded = statement.execute("insert into quotes (quotation, author) values ('" + aQuote.getQuote() + "', '" + aQuote.getAuthor() +"')");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return succeeded;
 	}
 	
 	
