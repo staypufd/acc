@@ -42,11 +42,28 @@ public class QuotesManager {
 	
 	public boolean saveQuote(Quote aQuote) {
 		boolean succeeded = false;
+
+		
 		try {
+			boolean theResult;
+			int updateCount;
 			Connection connection;
 			connection = ds.getConnection();
 			Statement statement = connection.createStatement();
-			succeeded = statement.execute("insert into quotes (quotation, author) values ('" + aQuote.getQuote() + "', '" + aQuote.getAuthor() +"')");
+			
+			
+			// Read the docs for the execute method below to understand what the boolean returned means
+			// Here we use if for the updateCount, but it has another meaning if it's true, so read about it.
+			theResult = statement.execute("insert into quotes (quotation, author) values ('" + aQuote.getQuote() + "', '" + aQuote.getAuthor() +"')");
+			if (theResult == false) {
+				// Result count should be 1;
+				updateCount = statement.getUpdateCount();
+				if ( updateCount == 1) {
+					succeeded = true;
+				}
+				
+			}
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
