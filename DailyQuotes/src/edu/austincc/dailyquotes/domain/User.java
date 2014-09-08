@@ -4,11 +4,16 @@ public class User {
 	int id;
 	String username;
 	String password;
-	
+
 	public User(int id, String username, String password) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
+	}
+
+	public User(String username2, String password2) {
+		this.username = username2;
+		this.password = password2;
 	}
 
 	/**
@@ -68,6 +73,6 @@ public class User {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
+
+
 }
