@@ -33,8 +33,6 @@ public class UsersManager {
 		try {
 			Connection connection;
 			connection = ds.getConnection();
-//			Statement statement = connection.createStatement();
-//			ResultSet resultSet = statement.executeQuery("select id, username, password from users");
 
 			PreparedStatement ps = connection.prepareStatement("select id, username, password from users");
 			ResultSet resultSet = ps.executeQuery();
