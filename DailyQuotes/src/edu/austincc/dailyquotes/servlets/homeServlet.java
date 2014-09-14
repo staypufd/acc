@@ -4,13 +4,12 @@ import java.io.IOException;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import edu.austincc.dailyquotes.domain.Quote;
 import edu.austincc.dailyquotes.managers.QuotesManager;
@@ -18,14 +17,14 @@ import edu.austincc.dailyquotes.managers.QuotesManager;
 /**
  * Servlet implementation class DailyQuotesHomeServlet
  */
-@WebServlet(description = "Main home page for our Daily Quotes Application", 
+@WebServlet(description = "Main home page for our Daily Quotes Application",
 			urlPatterns = { "/homeServlet", ""})
 public class homeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	@Resource(name="jdbc/DB")
 	DataSource ds;
-	
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -40,13 +39,18 @@ public class homeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append(Quote.testQuote().toString());
-		
+
+		HttpSession mySession = request.getSession();
+		if ( mySession.getAttribute("isLoggedIn") == null ) {
+			// Do what here?
+		}
+
 		QuotesManager qm = new QuotesManager(ds);
 		request.setAttribute("theQuotes", qm.getQuotes());
-		
+
 		getServletContext().getRequestDispatcher("/WEB-INF/quotelist.jsp").forward(request, response);
 		return;
-		
+
 	}
 
 	/**

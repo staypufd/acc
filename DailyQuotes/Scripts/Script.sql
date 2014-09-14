@@ -29,3 +29,9 @@ select * from users;
 select password, id, username from users;
 
 insert into users (username, password) values ('tom', 'cat');
+
+commit;
+
+SELECT COUNT(*) AS rowcount1 from users;
+
+

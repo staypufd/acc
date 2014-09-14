@@ -18,10 +18,10 @@ import edu.austincc.dailyquotes.managers.UsersManager;
 @WebServlet("/usersServlet")
 public class usersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	@Resource(name="jdbc/DB")
 	DataSource ds;
-	
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,11 +36,11 @@ public class usersServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UsersManager um = new UsersManager(ds);
 		request.setAttribute("theUsers", um.getUsers());
-		
+
 		getServletContext().getRequestDispatcher("/WEB-INF/userlist.jsp").forward(request, response);
 		return;
-		
-		
+
+
 	}
 
 	/**

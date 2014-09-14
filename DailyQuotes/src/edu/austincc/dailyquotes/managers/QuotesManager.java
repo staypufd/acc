@@ -14,24 +14,29 @@ import edu.austincc.dailyquotes.domain.Quote;
 
 public class QuotesManager {
 	DataSource ds;
-	
+
 	public QuotesManager(DataSource ds) {
 		this.ds = ds;
 	}
-	
+
 	public ArrayList<Quote> getQuotes() {
 		ArrayList<Quote> quotes = new ArrayList<>();
-		
+
+
 		try {
 			Connection connection;
 			connection = ds.getConnection();
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery("select id, quotation, author from quotes");
-			
+
 			while (resultSet.next()) {
 				quotes.add(new Quote(resultSet.getInt("id"), resultSet.getString("quotation"), resultSet.getString("author")));
 			}
-			
+
+			resultSet.close();
+			statement.close();
+			connection.close();
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,19 +44,19 @@ public class QuotesManager {
 
 		return quotes;
 	}
-	
+
 	public boolean saveQuote(Quote aQuote) {
 		boolean succeeded = false;
 
-		
+
 		try {
 			boolean theResult;
 			int updateCount;
 			Connection connection;
 			connection = ds.getConnection();
 			Statement statement = connection.createStatement();
-			
-			
+
+
 			// Read the docs for the execute method below to understand what the boolean returned means
 			// Here we use if for the updateCount, but it has another meaning if it's true, so read about it.
 			theResult = statement.execute("insert into quotes (quotation, author) values ('" + aQuote.getQuote() + "', '" + aQuote.getAuthor() +"')");
@@ -61,17 +66,19 @@ public class QuotesManager {
 				if ( updateCount == 1) {
 					succeeded = true;
 				}
-				
+
 			}
-			
-			
+
+			statement.close();
+			connection.close();
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return succeeded;
 	}
-	
-	
+
+
 }

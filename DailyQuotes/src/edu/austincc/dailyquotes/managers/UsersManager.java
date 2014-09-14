@@ -14,7 +14,6 @@ import javax.sql.DataSource;
 
 import edu.austincc.dailyquotes.domain.Quote;
 import edu.austincc.dailyquotes.domain.User;
-import edu.austincc.dailyquotes.managers.exceptions.UserCouldNotBeAddedExeception;
 
 /**
  * @author samjr
@@ -42,6 +41,10 @@ public class UsersManager {
 									resultSet.getString("username"),
 									resultSet.getString("password")));
 			}
+
+			resultSet.close();
+			ps.close();
+			connection.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -71,6 +74,10 @@ public class UsersManager {
 			prepStatement.setString(2, upass);
 
 			prepStatement.execute();
+
+
+			prepStatement.close();
+			connection.close();
 
 			added = true;
 		} catch (SQLException e) {
