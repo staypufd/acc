@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
+
+<link rel="stylesheet" href="<c:url value="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"/>">
 
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="<c:url value="/bootstrap-3.2-3.0-dist/css/bootstrap.min.css"/>">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="<c:url value="/bootstrap-3.2-3.0-dist/css/bootstrap-theme.min.css"/>">
-
-<title>Daily Quotes</title>
-</head>
-<body>
-<%@ include file="navbar.jsp" %>
-
+<my:layout>
+<jsp:attribute name="body">
 	<div class="container">
-		<h1>Today's Quotes</h1>
+		<h1>Quotes</h1>
 
 		<c:if test="${sessionScope.isLoggedIn == true}">
 			<form action="/newQuoteServlet" method="get" name="newQuote">
@@ -30,9 +18,18 @@
 			<br/>
 		</c:if>
 
+		<table id="quoteTable">
+			<c:forEach items="${theQuotes }" var="aQuote">
+				<tr>
+					<td>${ aQuote.id }</td>
+					<td>${ aQuote.quote }</td>
+					<td>${ aQuote.author }</td>
+				</tr>
+			</c:forEach>
+		</table>
 
-
-		<table class="table table-striped">
+<%--
+		<table id="quoteTable" class="table table-striped">
 			<c:forEach items="${theQuotes }" var="aQuote">
 				<tr>
 					<td>
@@ -45,29 +42,29 @@
 							</footer>
 						</blockquote>
 						<c:if test="${sessionScope.isLoggedIn == true}">
-<%-- 							<form action="/EditQuoteServlet" method="GET" name="editQuote">
-								<input type="hidden" name="quoteNumberToEdit" value="${ aQuote.id }">
-								<button type="submit" class="btn btn-primary btn-xs">Edit</button>
-							</form> --%>
+						<c:set var="quoteID" scope="page" value="${ aQuote.id }"/>
 
-							<a href="/EditQuoteServlet?id=${ aQuote.id }"  class="btn btn-primary btn-xs">Edit</a>
+							<form action="<c:url value=/EditQuoteServlet"/>" method="GET" name="editQuote">
+								<input type="hidden" name="quoteNumberToEdit" value="${ quoteID }">
+								<button type="submit" class="btn btn-primary btn-xs">Edit</button>
+							</form>
+
+							<c:url var="editURL" value="/EditQuoteServlet?id=${ quoteID }"/>
+							<a href="${ editURL }" class="btn btn-primary btn-xs">Edit</a>
 						</c:if>
 					</td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
-
-	<!-- JQuery -->
-	<script src="<c:url value="/jquery/jquery-2.1.1.js"/>"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="<c:url value="/bootstrap-3.2-3.0-dist/js/bootstrap.min.js"/>"></script>
+--%>
 
 
-	<%@ include file="footer.jsp" %>
-</body>
-</html>
+
+
+</jsp:attribute>
+</my:layout>
+
 
 
 
