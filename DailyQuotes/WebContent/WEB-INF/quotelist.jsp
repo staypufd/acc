@@ -32,6 +32,11 @@
 <title>Daily Quotes</title>
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
+<%--
+<c:if test="${ not empty error }">
+	<h3 style="color:red;">Error:  ${error }</h3>
+</c:if>
 <c:choose>
 	<c:when test="${sessionScope.isLoggedIn != true}">
 		<nav class="navbar navbar-default" role="navigation">
@@ -84,17 +89,19 @@
     </c:otherwise>
 </c:choose>
 
-
 </nav>
+ --%>
 	<div class="container">
 		<h1>Today's Quotes</h1>
 
 		<c:if test="${sessionScope.isLoggedIn == true}">
-			<form action="newQuoteServlet" method="get" name="newQuote">
+			<form action="/newQuoteServlet" method="get" name="newQuote">
 				<input class="btn btn-primary" type="submit" title="newQuote" value="New Quote">
 			</form>
 			<br/>
 		</c:if>
+
+
 
 		<table class="table table-striped">
 			<c:forEach items="${theQuotes }" var="aQuote">
@@ -108,6 +115,14 @@
 								<c:out value="${ aQuote.author }"/>
 							</footer>
 						</blockquote>
+						<c:if test="${sessionScope.isLoggedIn == true}">
+<%-- 							<form action="/EditQuoteServlet" method="GET" name="editQuote">
+								<input type="hidden" name="quoteNumberToEdit" value="${ aQuote.id }">
+								<button type="submit" class="btn btn-primary btn-xs">Edit</button>
+							</form> --%>
+
+							<a href="/EditQuoteServlet?id=${ aQuote.id }"  class="btn btn-primary btn-xs">Edit</a>
+						</c:if>
 					</td>
 				</tr>
 			</c:forEach>
@@ -145,6 +160,8 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="<c:url value="/bootstrap-3.2-3.0-dist/js/bootstrap.min.js"/>"></script>
 
+
+	<%@ include file="footer.jsp" %>
 </body>
 </html>
 

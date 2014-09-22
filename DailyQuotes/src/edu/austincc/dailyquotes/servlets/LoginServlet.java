@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * Servlet implementation class loginServlet
  */
 @WebServlet("/loginServlet")
-public class loginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -28,7 +28,7 @@ public class loginServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginServlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -90,14 +90,11 @@ public class loginServlet extends HttpServlet {
 				}
 			}
 
-
 			c.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
 
 		return validUserLogin;
 	}

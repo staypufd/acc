@@ -22,6 +22,9 @@
 <title>Add New User</title>
 </head>
 <body>
+
+<%@ include file="navbar.jsp" %>
+
 	<div class="container">
 		<h2>Add a New User</h2>
 
@@ -40,5 +43,8 @@
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
+
+
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

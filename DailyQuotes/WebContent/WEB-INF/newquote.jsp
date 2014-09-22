@@ -21,6 +21,9 @@
 <title>New Quote</title>
 </head>
 <body>
+
+<%@ include file="navbar.jsp" %>
+
 	<h2>Add a New Quote</h2>
 
 	<form  role="form" action="newQuoteServlet" method="post" >
@@ -36,5 +39,6 @@
 		<button type="submit" class="btn btn-default">Submit</button>
 	</form>
 
+<%@ include file="footer.jsp" %>
 </body>
 </html>

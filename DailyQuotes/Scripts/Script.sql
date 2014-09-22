@@ -34,4 +34,4 @@ commit;
 
 SELECT COUNT(*) AS rowcount1 from users;
 
-
+select count(*) as numMatchingUsers from users where username = 'sam' and password = 'abcd';

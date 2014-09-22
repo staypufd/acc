@@ -3,6 +3,7 @@ package edu.austincc.dailyquotes.managers;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -80,5 +81,71 @@ public class QuotesManager {
 		return succeeded;
 	}
 
+	public Quote getQuoteById(String idString) {
+
+		Connection c;
+		Quote returnQuote = null;
+		try {
+			c = ds.getConnection();
+			PreparedStatement ps = c.prepareStatement("select id, quotation, author from quotes where id = ?");
+			ps.setString(1, idString);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String quoteString = rs.getString("quotation");
+				String authorString = rs.getString("author");
+
+				returnQuote = new Quote(id, quoteString, authorString);
+			}
+
+			c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return returnQuote;
+	}
+
+	public boolean updateQuote(Quote myUpdatedQuote) {
+		Connection c;
+		boolean updateSucceeded = false;
+
+		try {
+			c = ds.getConnection();
+			PreparedStatement ps = c.prepareStatement("update QUOTES SET quotation=?, author=? WHERE id = ?");
+			ps.setString(1, myUpdatedQuote.getQuote());
+			ps.setString(2,  myUpdatedQuote.getAuthor());
+			ps.setInt(3, myUpdatedQuote.getId());
+
+			ps.execute();
+
+			c.close();
+			updateSucceeded = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return updateSucceeded;
+		}
+
+
+		return updateSucceeded;
+	}
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
