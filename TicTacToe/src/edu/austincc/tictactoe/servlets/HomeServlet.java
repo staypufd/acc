@@ -18,7 +18,7 @@ import edu.austincc.tictactoe.domain.Piece;
 /**
  * Servlet implementation class HomeServlet
  */
-@WebServlet("/")
+@WebServlet("")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
