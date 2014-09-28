@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 /**
- * Servlet Filter implementation class LogFilter
+ * Servlet Filter implementation class LogFilter to log each request
  */
 @WebFilter("/*")
 public class LogFilter implements Filter {
