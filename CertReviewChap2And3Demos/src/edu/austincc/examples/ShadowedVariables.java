@@ -1,3 +1,4 @@
+package edu.austincc.examples;
 
 class Phone {
 	String phoneNumber = "123456789";

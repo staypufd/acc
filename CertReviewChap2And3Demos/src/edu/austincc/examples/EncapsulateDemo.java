@@ -1,6 +1,11 @@
+package edu.austincc.examples;
+
+import java.util.ArrayList;
+
 
 public class EncapsulateDemo {
 
+	ArrayList<Person> alp = new ArrayList<>();
 	
 	Person p = new Person(11);
 	
