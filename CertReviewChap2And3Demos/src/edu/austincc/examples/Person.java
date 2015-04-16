@@ -2,7 +2,7 @@ package edu.austincc.examples;
 
 
 
-public class Person implements Sizeable{
+ public class Person implements Sizeable{
 	
 	private int size;
 	
@@ -42,6 +42,19 @@ public class Person implements Sizeable{
 		this.size = size;
 	}
 
+	
+	
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Person [size=").append(size).append("]");
+		return builder.toString();
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -62,6 +75,19 @@ public class Person implements Sizeable{
 		Animal a = new Animal();
 		
 		System.out.println(p1.sameSizeAs(a));
+		
+		Sizeable sb = new Sizeable() {
+			
+			@Override
+			public int size() {
+				// TODO Auto-generated method stub
+				return -666;
+			}
+		};
+		
+
+		
+		System.out.println(sb.size() + sb.age);
 		
 	}
 
